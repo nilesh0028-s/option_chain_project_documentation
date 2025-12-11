@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option Chain Documentation</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-white text-dark">
+
+    <div class="container my-5 p-4 border rounded shadow-sm">
+
+        <h2 class="pb-2 border-bottom">What is an Option?</h2>
+        <p>
+            An option is a special contract that connects two people: a buyer and a seller. It gives the buyer a choice
+            (a right), not a compulsion, to buy or to sell something (like Nifty or a stock) at a fixed price within a
+            limited time. The fixed price is the strike price, and the last date to use this choice is the expiry date.
+        </p>
+
+        <h2 class="mt-4 pb-2 border-bottom">What is Option Chain?</h2>
+        <p>An option chain is simply a big list of all the options available for one stock or index, shown together in a
+            table.
+        <p>
+
+        <p>
+            For one particular expiry date, it shows every strike price and, for each strike, the call options on one
+            side and the put options on the other side. Next to each strike, the table shows useful numbers like the
+            last traded price, how many contracts traded today, and how many contracts are still open. By looking at
+            this one screen, a trader can quickly compare different strikes and see where most buying and selling
+            interest is, instead of checking each option one by one.
+        </p>
+
+        <!-- IMAGE -->
+        <div class="text-center my-4">
+            <img src="assets/image_2.png" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+
+        <h3 class="mt-4">Types of Options</h3>
+        <p><b>Call Options and Put Options.</b></p>
+        <ul>
+            <li><b>Call Option:</b> A call option gives the buyer the right to buy an asset at a specified price within
+                a specific time period. Buyers of call options expect the price of the underlying asset to rise.</li>
+            <li><b>Put Option:</b> A put option gives the buyer the right to sell an asset at a specified price within a
+                specific time period. Buyers of put options expect the price of the underlying asset to fall.</li>
+        </ul>
+        <h3 class="mt-4">What Happens at Expiry</h3>
+        <ul>
+            <li>On the expiry day, you check: "Is it useful to use my right or not?"</li>
+            <li>If the market price makes your right beneficial, you use it.</li>
+            <li>If the market price makes your right useless, you do nothing and let the option expire.</li>
+            <li>In the worst case, your loss is only the premium you paid at the start.</li>
+        </ul>
+        <h3 class="mt-4">Example: Call option</h3>
+        <ul>
+            <li>Nifty is at 22,000</li>
+            <li>You buy a call option with strike 22,000 and pay a premium of 100 points.</li>
+        </ul>
+
+        <h3 class="mt-3">Case 1: Market goes up</h3>
+        <ul>
+            <li>At expiry, Nifty becomes 22,300.</li>
+            <li>Your contract allows you to "buy at 22,000" while the market is 22,300.</li>
+            <li>The option is worth about 300 points (22,300 - 22,000).</li>
+            <li>Your profit is roughly 300 - 100 = 200 points.</li>
+        </ul>
+
+        <h3 class="mt-3">Case 2: Market goes down</h3>
+        <ul>
+            <li>At expiry, Nifty becomes 21,700.</li>
+            <li>Your right to buy at 22,000 is now useless.</li>
+            <li>You simply don't use the option.</li>
+            <li>Your loss is only the 100-point premium you paid.</li>
+        </ul>
+        <h3 class="mt-4">Example: Put option</h3>
+        <ul>
+            <li>Nifty is at 22,000.</li>
+            <li>You buy a put option with strike 22,000 and pay a premium of 100 points.</li>
+        </ul>
+
+        <h3 class="mt-3">Case 1: Market falls</h3>
+        <ul>
+            <li>At expiry, Nifty falls to 21,500.</li>
+            <li>Your contract allows you to "sell at 22,000".</li>
+            <li>The option is worth about 500 points.</li>
+            <li>After subtracting the premium, your profit is 500 - 100 = 400 points.</li>
+        </ul>
+
+        <h3 class="mt-3">Case 2: Market rises</h3>
+        <ul>
+            <li>At expiry, Nifty goes up to 22,500.</li>
+            <li>Your right to sell at 22,000 is useless.</li>
+            <li>You let the option expire.</li>
+            <li>Your loss is only the 100-point premium.</li>
+            <div class="border-bottom"></div>
+        </ul>
+
+
+    </div>
+    <div class="container my-5 p-4 border rounded shadow-sm">
+
+        <h3 class="pb-2">What is Strike Price?</h3>
+        <p>Strike price is the fixed price written in the option contract at which you can buy or sell the underlying
+            asset, depending on whether it is a call or a put option.</p>
+        <p>In an option chain, each row has one strike price like 21,800 or 22,000. This number is the agreed price for
+            the deal: for a call option it is the price at which you have the right to buy, and for a put option it is
+            the price at which you have the right to sell. The strike stays constant from the day the option is created
+            until expiry, even though the market price keeps moving up and down. How far the market is from the strike
+            helps decide whether the option is cheap or costly and whether it is in-the-money, at-the-money, or
+            out-of-the-money.</p>
+
+        <h3 class="pb-2">What is OI(Open interest)</h3>
+        <p>
+            Open interest (OI) tells you how many option contracts are currently "alive" for a particular strike and
+            expiry.
+        </p>
+        <p>
+            In simple words, it is the count of all contracts that have been created but not yet closed, squared off, or
+            expired. If new traders open fresh positions, open interest goes up; when traders close their existing
+            positions, open interest goes down.
+        </p>
+        <p>
+            A high OI at a strike usually means many traders are interested and the option is more liquid, so it is
+            easier to buy and sell there.
+        </p>
+        <h3 class="pb-2">Change in OI(Open interest)</h3>
+        <p>
+            Change in OI (Change in Open Interest) shows how much the number of open contracts has gone up or down
+            compared to the previous day.
+        </p>
+
+        <ul>
+            <li>
+                Open Interest is the total number of contracts that are still open and not closed.
+            </li>
+
+            <li>
+                Change in OI formula:<br>
+                <strong>Change in OI = Today's OI - Yesterday's OI</strong>
+            </li>
+
+            <li>
+                If Change in OI is positive → new positions were added (more contracts are now open).
+            </li>
+
+            <li>
+                If Change in OI is negative → traders closed positions (fewer contracts left open).
+            </li>
+
+            <li>
+                A big positive Change in OI with good volume means fresh money is entering that strike.
+            </li>
+
+            <li>
+                A big negative Change in OI means traders are exiting that strike and interest is decreasing.
+            </li>
+        </ul>
+        <h3 class="pb-2">Implied Volatility(IV)</h3>
+
+        <p>
+            Implied Volatility (IV) tells you how much the market expects the price of the stock or index to move in the
+            future.
+        </p>
+
+        <ul>
+            <li>
+                IV does not tell you whether the price will go up or down, only how big the move might be.
+            </li>
+
+            <li>
+                IV is shown as a percentage per year (for example, 15%, 20%, 30%).
+            </li>
+
+            <li>
+                A higher IV means the market expects bigger swings and more uncertainty.
+            </li>
+
+            <li>
+                A lower IV means the market expects smaller moves and more stable prices.
+            </li>
+
+            <li>
+                When IV is high, options usually become more expensive because the chance of a big move is higher.
+            </li>
+
+            <li>
+                When IV is low, options become cheaper because big moves are less expected.
+            </li>
+        </ul>
+        <h3 class="pb-2">Last Traded Price(LTP)</h3>
+        <p>It is the price of the most recent trade that happened in that option or stock on the exchange. Whenever a
+            new trade is executed, that deal's price becomes the new LTP, so it always shows the latest price at which
+            buyers and sellers actually agreed.
+        </p>
+
+        <h3 class="pb-2">Last Change</h3>
+        <p>
+            LTP Change shows how much the latest price has moved compared to an earlier reference price.
+        </p>
+
+        <ul>
+            <li>
+                <strong>Formula:</strong>
+                LTP Change = Today's Current LTP - Yesterday's Closing Price
+            </li>
+
+            <li>
+                If LTP Change is positive, the option is trading higher than before (price has gone
+                up).
+            </li>
+
+            <li>
+                If LTP Change is negative, the option is trading lower than before (price has gone down).
+            </li>
+        </ul>
+        <h3 class="pb-2">Built-up</h3>
+        <p>
+            Built-up in an option chain tells you what kind of positions are getting created or closed at a strike
+            by looking at price + OI together. It is usually shown as four types:
+        </p>
+
+        <ol>
+            <li>
+                <strong>Long Buildup</strong>
+                <ul>
+                    <li>Price goes up and Open Interest goes up.</li>
+                    <li>New buyers are entering and holding positions.</li>
+                    <li>Generally indicates bullish interest at that strike.</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Short Buildup</strong>
+                <ul>
+                    <li>Price goes down and Open Interest goes up.</li>
+                    <li>New sellers (shorts) are entering and holding positions.</li>
+                    <li>Usually indicates bearish sentiment.</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Short Covering</strong>
+                <ul>
+                    <li>Price goes up and Open Interest goes down.</li>
+                    <li>Traders who were short are closing their positions.</li>
+                    <li>Often seen when a down-move is ending or reversing.</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Long Unwinding</strong>
+                <ul>
+                    <li>Price goes down and Open Interest goes down.</li>
+                    <li>Traders who were long are exiting or booking profits.</li>
+                    <li>Shows bullish positions reducing, not fresh shorts being added.</li>
+                </ul>
+            </li>
+        </ol>
+
+        </ul>
+        <h3 class="pb-2">What is Volume</h3>
+        <p>
+            Volume is the total number of contracts traded today for that specific option (that strike and expiry).
+        </p>
+
+        <ul>
+            <li>Every time one buyer and one seller complete a trade, volume increases by 1 contract.</li>
+            <li>Volume counts all trades, whether they are opening new positions or closing old ones.</li>
+            <li>High volume means that option is actively traded and it is easier to enter and exit.</li>
+            <li>Very low volume means fewer traders are interested there, so the bid-ask spread can be wide.</li>
+            <li>Volume resets to zero every new trading day and builds up through the day.</li>
+        </ul>
+
+        <h3 class="pb-2">VWAP (Volume Weighted Average Price)</h3>
+        <p>VWAP tells you the average price at which most of the trading happened during the whole day.</p>
+        <ul>
+            <li>Price above VWAP → buyers strong → indicates bullishness.</li>
+            <li>Price below VWAP → sellers strong → indicates bearishness.</li>
+        </ul>
+        <h3 class="pb-2">VWAP Change</h3>
+        <p>
+            VWAP Change tells you how much today’s VWAP has moved compared to a previous reference VWAP, usually
+            yesterday’s VWAP for the same option.
+        </p>
+
+        <ul>
+            <li>
+                <strong>Formula:</strong><br>
+                VWAP Change = Today’s VWAP − Yesterday’s VWAP
+            </li>
+
+            <li>
+                If VWAP Change is positive → today’s average traded price is higher than yesterday’s average (buyers
+                were willing to pay more).
+            </li>
+
+            <li>
+                If VWAP Change is negative → today’s average traded price is lower than yesterday’s average (sellers
+                accepted lower prices).
+            </li>
+
+            <li>
+                VWAP Change with volume helps show whether the market’s “fair” traded level is shifting up or down with
+                strength.
+            </li>
+        </ul>
+        <h3 class="pb-2">LTP VWAP %</h3>
+        <p>
+            LTP VWAP % shows how far the current Last Traded Price is from today’s VWAP in percentage terms.​
+        </p>
+
+        <ul>
+            <li>
+                <strong>Common formula</strong><br>
+                LTP VWAP % = (LTP − VWAP) / VWAP × 100
+            </li>
+
+            <li>
+                If LTP is above VWAP, this percentage will be positive; it tells you how many percent the latest price
+                is above the average traded price.​
+            </li>
+
+            <li>
+                If LTP is below VWAP, the percentage will be negative; it shows how much cheaper the latest trade is
+                compared to the day’s average.​
+            </li>
+
+            <li>
+                A small number (like +0.5%) means LTP is close to VWAP; a big number (like +5% or −5%) means price has
+                moved far away from the average, which some traders see as overbought / oversold intraday.​
+            </li>
+        </ul>
+
+        <p><strong>Example:</strong></p>
+
+        <ul>
+            <li>LTP (Last Traded Price) = 105</li>
+            <li>VWAP = 100</li>
+            <li>
+                Apply formula:<br>
+                LTP VWAP % = (LTP − VWAP) / VWAP × 100
+            </li>
+            <li>
+                LTP VWAP % = (105 − 100) / 100 × 100 = 5%
+            </li>
+            <li>
+                This means: LTP is 5% above the VWAP (buyers stronger).
+            </li>
+        </ul>
+        <h3 class="pb-2">OI PCR (Open Interest Put–Call Ratio)</h3>
+
+        <ul>
+            <li>OI PCR compares total put open interest to total call open interest for an index or stock.</li>
+            <li><strong>Formula</strong>:</li>
+            <li>OI PCR = (Total Put OI) ÷ (Total Call OI).</li>
+
+        </ul>
+        <p><strong>Example:</strong></p>
+        <ul>
+            <li>Total Put OI = 150,000 contracts</li>
+            <li>Total Call OI = 100,000 contracts</li>
+            <li>
+                Apply formula:<br>
+                OI PCR = Total Put OI ÷ Total Call OI
+            </li>
+            <li>
+                OI PCR = 150,000 ÷ 100,000 = 1.5
+            </li>
+            <li>
+                Interpretation: OI PCR is above 1 → more put OI than call OI → traders are expecting a downside.
+            </li>
+        </ul>
+        <h3 class="pb-2"> COI PCR(Change in Open Interest Put–Call Ratio)</h3>
+        <p>It shows which side added more fresh positions today —the <strong>put seller</strong> or the <strong>call
+                seller</strong>.</p>
+        <p><strong>COI PCR = Change in Put OI ÷ Change in Call OI</strong></p>
+        <ul>
+            <li>
+                <strong>If COI PCR is above 1:</strong><br>
+                • More put OI was added than call OI.<br>
+                • Put seller are stronger → the market has a <strong>bullish bias</strong>.
+            </li>
+            <br>
+            <li>
+                <strong>If COI PCR is below 1:</strong><br>
+                • More call OI was added than put OI.<br>
+                • Call seller are stronger → the market has a <strong>bearish bias</strong>.
+            </li>
+        </ul>
+        <h5>Example 1</h5>
+        <p>Put OI added today: <strong>30,000</strong></p>
+        <p>Call OI added today: <strong>10,000</strong></p>
+        <p>COI PCR =30,000 ÷ 10,000 = 3</p>
+        <p>This means put sellers are much more active, so the market has a <strong>bullish</strong></p>
+        <h5>Example 2</h5>
+        <p>Put OI added today: <strong>15,000</strong></p>
+        <p>Call OI added today: <strong>30,000</strong></p>
+        <p>COI PCR = 15,000 ÷ 30,000 = 0.5</p>
+        <p>This means call sellers are more active, so the market has a <strong>bearish</strong></p>
+
+        <h3 class="pb-2">Difference Between COI PCR v/s OI PCR</h3>
+
+
+        <ul>
+            <li>OI PCR uses total Open Interest.</li>
+            <li>OI PCR shows overall market sentiment.</li>
+            <li>OI PCR changes slowly.</li>
+            <li>OI PCR is better for broader trend bias.</li>
+        </ul>
+
+        <ul>
+            <li>COI PCR uses change in Open Interest.</li>
+            <li>COI PCR shows today's fresh sentiment.</li>
+            <li>COI PCR changes quickly.</li>
+            <li>COI PCR is better for intraday strength/pressure.</li>
+        </ul>
+
+        <h3 class="pb-2">OI Percentile</h3>
+        <p>OI Percentile tells you how high or low today’s OI is compared to its past levels.</p>
+
+        <ul>
+            <li>If OI Percentile is <strong>90%</strong> → Today’s OI is higher than 90% of previous days → very high →
+                strong interest.</li>
+            <li>If OI Percentile is <strong>10%</strong> → Today’s OI is higher than only 10% of previous days → very
+                low → weak interest.</li>
+        </ul>
+        <h3 class="pb-2">OI Percent</h3>
+        <p>OI Percent shows how much OI increased or decreased today in percentage.</p>
+
+        <ul>
+            <li>If OI increased from 1,00,000 to 1,10,000 → OI Percent = +10%</li>
+            <li>If OI fell from 1,00,000 to 90,000 → OI Percent = –10%</li>
+        </ul>
+
+        <h3 class="pb-2">COI Strength (Change in OI Strength)</h3>
+        <p>COI Strength tells you which side (Call or Put) is getting more fresh activity right now in the market.</p>
+        <p>It does this by comparing:</p>
+        <ul>
+            <li>PE COI = Change in Put OI</li>
+            <li> CE COI = Change in Call OI</li>
+        </ul>
+        <p><strong>Formula:</strong></p>
+        <p><strong>COI Strength = (PE COI − CE COI) / (|PE COI| + |CE COI|)</strong></p>
+
+        <h4 class="pb-2">How to Read COI Strength</h4>
+        <ul>
+            <li>&gt;+0.3 → Bullish</li>
+            <li>-0.3 to +0.3 → Neutral</li>
+            <li>&lt;-0.3 → Bearish</li>
+        </ul>
+        <h3 class="pb-2">Theta – effect of time (time decay)</h3>
+        <ul>
+            <li>Theta shows how much an option's value is expected to decrease each day just because time is passing.
+            </li>
+            <li>For option buyers, theta is usually negative → the option loses value daily.</li>
+            <li><strong>Example:</strong> Theta = −3 → if all else stays the same, the option loses about <strong>3
+                    points in value per day</strong>.</li>
+            <li>Time decay accelerates as the expiry date approaches, especially for
+                options near the money.</li>
+        </ul>
+
+        <h3 class="pb-2">Vega – effect of volatility</h3>
+        <ul>
+            <li>Vega shows how much the option price will change if implied volatility changes by 1 percentage point.
+            </li>
+            <li>Higher volatility makes options more expensive; lower volatility makes them cheaper.</li>
+            <li>Example: Vega = 2.5 means if IV goes from 20% to 21%, the option price is expected to increase by about
+                2.5 points.</li>
+            <li>Options with more time to expiry and near-the-money strikes usually have higher vega.</li>
+        </ul>
+        <h3 class="pb-2">Delta – effect of price change</h3>
+        <ul>
+            <li>Delta tells how much the option price is expected to move if the underlying moves by 1 point.</li>
+            <li>Call options have positive delta (they gain when price goes up); put options have negative delta (they
+                gain when price goes down).</li>
+            <li>Example: If a call has delta 0.40 and Nifty moves up 1 point, the option price is expected to go up
+                about 0.40 points.</li>
+            <li>A delta close to 0 means the option hardly reacts to small price moves; a delta close to 1 (or −1 for
+                puts) means it moves almost point‑for‑point with the underlying.</li>
+        </ul>
+        <h3 class="pb-2">Gamma</h3>
+        <ul>
+            <li>Gamma tells how much delta itself will change when the underlying moves by 1 point.</li>
+            <li>If delta is “speed” of the option, gamma is the “acceleration” – how quickly that speed changes.</li>
+            <li>Example: A call has delta 0.40 and gamma 0.05. If Nifty goes up 1 point, new delta ≈ 0.45 (0.40 + 0.05).
+                If it goes up another 1 point, delta may rise again to about 0.50.</li>
+            <li>Gamma is usually highest for options near the current market price and close to expiry, because there
+                the option’s behaviour can flip quickly between acting like “almost worthless” and “very valuable”.</li>
+        </ul>
+        <h3 class="pb-2">Relationships Between all Greeks?</h3>
+        <h4 class="pb-2">Delta and Gamma</h4>
+        <ul>
+            <li>Delta is “first reaction” of the option price when the underlying moves; Gamma is how fast that reaction
+                itself changes.</li>
+            <li>When Gamma is high, Delta can jump quickly with even a small move in the underlying, so the option
+                becomes very sensitive.</li>
+            <li>When Gamma is low, Delta changes slowly and the option behaves more steadily.</li>
+        </ul>
+        <h4 class="pb-2">Gamma and Theta</h4>
+
+        <ul>
+            <li>Options with high Gamma (very responsive to price moves) usually have high Theta (they lose value faster
+                with time).</li>
+            <li>This is the trade‑off: if you want strong benefit from small price moves (high Gamma), you must accept
+                faster time decay (more negative Theta).</li>
+            <li>Deep in‑the‑money or far out‑of‑the‑money options normally have lower Gamma and also lower Theta
+                compared to at‑the‑money options.</li>
+        </ul>
+        <h4 class="pb-2">Vega with Delta and Gamma</h4>
+        <ul>
+            <li>Vega measures sensitivity to implied volatility; when implied volatility changes, it also affects Delta
+                and Gamma.</li>
+            <li>If volatility increases, option prices rise and both calls and puts tend to have Deltas move closer to
+                0.5 (more uncertainty), and Gamma around the money often increases.</li>
+            <li>If volatility falls, Deltas of in‑the‑money options move closer to 1 (or −1 for puts) and Deltas of
+                out‑of‑the‑money options move closer to 0, while Gamma around the money tends to drop.</li>
+        </ul>
+
+        <h4 class="pb-2">Time to expiry and all Greeks</h4>
+        <ul>
+            <li>With more time left to expiry, Deltas are softer (closer to 0.5), Gamma is smaller, Theta is slower, and
+                Vega is larger.</li>
+            <li>As expiry gets closer, Deltas move quickly toward 1 or 0, Gamma spikes near the money, Theta decay
+                speeds up there, and Vega shrinks.</li>
+            <li>So time passing doesn’t only increase Theta decay; it also reshapes Delta, Gamma, and Vega together.
+            </li>
+        </ul>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+</body>
+
+</html>
