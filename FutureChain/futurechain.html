@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body class="bg-white text-dark">
+    <div class="container my-5 p-4 border rounded shadow-sm">
+        <h3 class="pb-2 border-bottom">What is FutureChain?</h3>
+        <p>A FutureChain chain shows the list of available future contracts for a stock/index across different expiray
+            date.</p>
+        <h3 class="pb-2 border-bottom">What is Future Contract?</h3>
+        <p>A futures contract is an agreement to buy or sell an asset at a predetermined price on a specific future
+            date. Unlike spot trading (buying and selling today), futures allow you to trade based on where you expect
+            prices to go in the future.</p>
+
+        <div class="text-center my-4">
+            <img src="assets/image.png" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+
+        <div class="container my-5 p-4 border rounded shadow-sm">
+
+            <h3 class="pb-2">Coloum Explanation</h3>
+
+            <h4 class="pb-2">Expiry</h4>
+            <p>
+                This column shows the contract expiration dates. Each row represents a different futures contract.
+                In your screenshot, you can see contracts expiring on <b>30-DEC-2025</b>, <b>27-JAN-2026</b>, and
+                <b>24-FEB-2026</b>.
+                After the expiry date, the contract automatically closes and settles at the spot price.
+            </p>
+
+            <h4 class="pb-2">OI (Open Interest)</h4>
+            <p>
+                Open Interest represents the total number of outstanding futures contracts that haven't been closed or
+                settled yet.
+                A high OI indicates that many traders are actively holding positions in that contract.
+                In your data, the <b>30-DEC-2025</b> contract has the highest OI at <b>1,64,26,650</b>,
+                meaning it's the most actively traded (most liquid) contract.
+            </p>
+
+            <h4 class="pb-2">Change in OI</h4>
+            <p>
+                This shows how much the Open Interest has increased or decreased from the previous trading session.
+                For example, the <b>30-DEC-2025</b> contract increased by <b>77,775 contracts (0.48%)</b>,
+                indicating fresh buying or selling activity in that contract.
+            </p>
+
+            <h4 class="pb-2">LTP (Last Traded Price)</h4>
+            <p>
+                This is the most recent price at which the futures contract was traded.
+                It represents the current market consensus of what the Nifty will be worth at that future date.
+                For the <b>30-DEC-2025</b> contract, the LTP is <b>26,148</b>.
+            </p>
+
+            <h4 class="pb-2">Change in LTP (%)</h4>
+            <p>
+                This shows the percentage change in price from the previous trading day.
+                The <b>30-DEC-2025</b> contract increased by <b>138.5 (0.53%)</b>,
+                meaning the futures price went up by about <b>0.53%</b> compared to yesterday's close.
+            </p>
+
+            <h4 class="pb-2">High &amp; Low</h4>
+            <p>
+                These columns show the highest and lowest prices at which the contract traded during the current
+                session.
+                For <b>30-DEC-2025</b>, the <b>High</b> was <b>26,424</b> and the <b>Low</b> was <b>25,857</b>,
+                showing the intraday price movement range.
+            </p>
+            <h4 class="pb-2">Rollover Cost</h4>
+            <p>
+                Rollover Cost is the extra amount you pay to move your position from the current month futures
+                contract to the next month futures contract.
+            </p>
+
+            <p>
+                <b>Formula:- Next Month Futures Price − Current Month Futures Price</b><br>
+
+            </p>
+            <h4 class="pb-2"> Example</h4>
+            <p>
+                Imagine this situation
+            </p>
+
+            <p>
+                You rent a shop for <b>December</b>.
+            </p>
+
+            <p>
+                December rent = <b>₹10,000</b>
+            </p>
+
+            <p>
+                Now December is ending, and you want to continue the shop in <b>January</b>.
+            </p>
+
+            <p>
+                January rent = <b>₹10,500</b>
+            </p>
+
+            <p>
+                So what extra do you pay to continue?
+            </p>
+
+            <p>
+                <b>₹10,500 − ₹10,000 = ₹500</b>
+            </p>
+
+            <p>
+                That extra <b>₹500</b> is the <b>ROLLOVER COST</b>.
+            </p>
+
+            <p>
+                You didn’t buy a new shop.<br>
+                You just extended the same shop for next month, but at a higher price.
+            </p>
+
+
+            <h4 class="pb-2">Rollover Percentage</h4>
+            <p>
+                Rollover % shows how many traders decided <b>not to exit</b> their position at expiry,
+                but instead <b>continued the same trade</b> in the next month contract.
+            </p>
+
+            <h4 class="pb-2"> Example</h4>
+            <p>
+                Suppose <b>100 traders</b> are holding December futures.
+            </p>
+            <p>
+                When expiry comes:
+                <br>• <b>70 traders</b> shift their trade to January
+                <br>• <b>30 traders</b> close their positions
+            </p>
+
+            <p>
+                <b>Rollover % = (70 / 100) × 100 = 70%</b>
+            </p>
+
+            <p>
+                <b>Meaning:</b><br>
+                → Most traders continued their trade<br>
+                → Indicates strong confidence in the next month’s trend
+            </p>
+
+
+
+        </div>
+
+    </div>
+    <div class="container my-5 p-4 border rounded shadow-sm">
+        <h4 class="pb-2">Key Differences Between Future Chain and Option Chain</h4>
+
+        <h4 class="pb-2">What Each Chain Shows</h4>
+        <p>
+            <b>Future Chain</b> displays a list of all available futures contracts for the same underlying asset
+            (like Nifty) across different expiration dates. Each row shows one futures contract with the same
+            characteristics—only the expiry date changes.
+        </p>
+
+        <p>
+            <b>Option Chain</b> displays all available option contracts for the same underlying asset,
+            organized by <b>strike prices</b> and <b>contract types (Call & Put)</b>.
+            Each row represents a different strike price, with call and put options shown side by side.
+        </p>
+
+        <h4 class="pb-2">Core Conceptual Differences</h4>
+        <table class="table table-bordered">
+            <tr>
+                <th>Aspect</th>
+                <th>Futures</th>
+                <th>Options</th>
+            </tr>
+            <tr>
+                <td>Obligation</td>
+                <td>You MUST buy or sell on expiry—no choice</td>
+                <td>You have the RIGHT but NOT the obligation</td>
+            </tr>
+            <tr>
+                <td>What You're Choosing</td>
+                <td>Only the expiration date</td>
+                <td>Expiration date + strike price (entry level)</td>
+            </tr>
+            <tr>
+                <td>Upfront Cost</td>
+                <td>No premium—only margin required</td>
+                <td>Premium paid upfront</td>
+            </tr>
+            <tr>
+                <td>Maximum Loss</td>
+                <td>Unlimited</td>
+                <td>Limited to the premium paid</td>
+            </tr>
+            <tr>
+                <td>Profit Potential</td>
+                <td>Unlimited</td>
+                <td>Limited by premium structure</td>
+            </tr>
+        </table>
+
+        <h4 class="pb-2">Structure and Layout Differences</h4>
+
+        <h4 class="pb-2">Future Chain Structure</h4>
+        <p>
+            • Simple and linear — one row per expiration date<br>
+            • All contracts track the same underlying price<br>
+            • Shows OI, LTP, High/Low across different dates only<br>
+            • Fewer variables to analyze
+        </p>
+
+        <h4 class="pb-2">Option Chain Structure</h4>
+        <p>
+            • Complex table with Calls on one side and Puts on the other<br>
+            • Multiple strike prices (₹26,000, ₹26,100, ₹26,200, etc.)<br>
+            • Shows Greeks (Delta, Gamma, Theta, Vega)<br>
+            • Hundreds of choices even for one expiry
+        </p>
+
+        <h4 class="pb-2">How They Work</h4>
+
+        <h4 class="pb-2">Futures Example</h4>
+        <p>
+            If you buy the <b>30-DEC-2025 Nifty futures</b> at <b>26,148</b>, you are obligated to:
+        </p>
+        <p>
+            • Take settlement at expiry, or<br>
+            • Square off the position before expiry
+        </p>
+        <p>
+            If Nifty rises to <b>27,000</b>, you profit.
+            If it falls to <b>25,000</b>, you lose the same amount.
+            Your profit or loss is <b>unlimited</b>.
+        </p>
+
+        <h4 class="pb-2">Options Example</h4>
+        <p>
+            If you buy a <b>26,200 Call option</b> expiring on <b>30-DEC-2025</b> by paying a
+            <b>₹50 premium</b>, you get the right to buy Nifty at 26,200.
+        </p>
+        <p>
+            You can:
+            <br>• Exercise it if profitable
+            <br>• Let it expire if not
+        </p>
+        <p>
+            Your maximum loss is limited to the <b>₹50 premium</b>.
+        </p>
+
+        <h4 class="pb-2">Key Advantages</h4>
+
+        <h4 class="pb-2">Future Chain Advantages</h4>
+        <p>
+            • High liquidity<br>
+            • Lower transaction costs<br>
+            • No premium — direct price exposure<br>
+            • Simple to understand<br>
+            • Best for strong directional trades
+        </p>
+
+        <h4 class="pb-2">Option Chain Advantages</h4>
+        <p>
+            • Limited risk<br>
+            • Flexibility in strike and expiry selection<br>
+            • Can profit from time decay<br>
+            • Useful for hedging and advanced strategies<br>
+            • Better in uncertain markets
+        </p>
+
+        <h4 class="pb-2">Decision Guide</h4>
+        <p>
+            Choose the <b>Future Chain</b> if you are confident about market direction
+            and want direct exposure with high liquidity.
+        </p>
+
+        <p>
+            Choose the <b>Option Chain</b> if you want limited risk, flexibility in strategy,
+            or protection against uncertainty.
+        </p>
+
+
+
+    </div>
+
+
+
+</body>
+
+</html>

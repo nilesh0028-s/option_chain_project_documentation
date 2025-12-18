@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body class="bg-white text-dark">
+    <div class="container my-5 p-4 border rounded shadow-sm">
+        <h2 class="pb-2 border-bottom">What is Call oi change V/S put oi change?</h2>
+        <h3 class="pb-3S border-bottom"> Why Do We Use This Tool?</h3>
+        <p>This tool displays fresh intraday activity in options, comparing change in call OI and put OI. It helps you
+            see whether traders are adding more calls or more puts right now during the trading session. for NIFTY 50,
+            16‑DEC‑2025, in the 23,950–27,950 range, with a 15‑minute interval.
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/image.png" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+        <h3 class="pb-2">Chart Explanation</h3>
+
+        <ul>
+            <li>
+                <strong style="color:green;">Green Line – CE OI Chg:</strong>
+                Intraday change in <b>Call Open Interest</b>.
+                When this line rises, it means <b>new call positions are being added</b> during the day.
+            </li>
+
+            <li>
+                <strong style="color:red;">Red Line – PE OI Chg:</strong>
+                Intraday change in <b>Put Open Interest</b>.
+                When this line rises, it means <b>new put positions are being added</b> during the day.
+            </li>
+
+            <li>
+                <strong style="color:gray;">Grey Line – Stock LTP:</strong>
+                Represents the <b>NIFTY spot price movement</b> throughout the session.
+            </li>
+        </ul>
+
+        <h3 class="pb-2"> OI Change Summary (Left Bar Chart)</h3>
+        <ul>
+            <li><b>CE OI Chg:</b> ≈ 23.79 L</li>
+            <li><b>PE OI Chg:</b> ≈ 18.32 L</li>
+        </ul>
+
+        <p>
+            <b>Conclusion:</b>
+            Since <b>fresh Call OI addition is higher than Put OI addition</b>, it indicates
+            <b>intraday bullish positioning</b> by option writers in this price range.
+        </p>
+
+    </div>
+    <div class="container my-5 p-4 border rounded shadow-sm">
+        <h3> Column Explanation</h3>
+
+        <h3 class="pb-2">Time</h3>
+        <p>
+           The timestamp when the data was recorded. Each row represents data at different intervals during the trading
+            day (15:30, 15:15, 15:00, 14:45, etc.).
+        </p>
+
+        <h4>Spot LTP</h4>
+        <p>
+            Nifty 50 last traded price at that time.
+            The green/red tag below shows how much it changed from the previous interval
+            and the percentage move.
+        </p>
+
+        <h4>PE OI Chg</h4>
+        <p>
+            Net change in put open interest in this strike range compared to the start of the day.
+        </p>
+        <ul>
+            <li><b>Positive value:</b> Puts are being added (fresh put positions).</li>
+            <li><b>Negative value (as in your screenshot):</b> Puts are being unwound/closed.</li>
+        </ul>
+
+        <p><b>Example (15:30):</b></p>
+        <p>
+            PE OI Chg = 18,32,104 with a ↓ of –7,06,896 from the previous reading →
+            total intraday put buildup is still 18.3L above the morning level,
+            but 7.06L has been cut since the prior interval.
+        </p>
+
+        <h4>CE OI Chg</h4>
+        <p>
+            Net change in call open interest compared to the start of the day.
+        </p>
+        <ul>
+            <li><b>Positive value:</b> Calls being added.</li>
+            <li><b>Negative value:</b> Calls being unwound.</li>
+        </ul>
+
+        <p><b>Example (15:30):</b></p>
+        <p>
+            CE OI Chg = 23,78,918 with ↓ –9,48,685 →
+            still large net call buildup on the day,
+            but heavy profit-booking/unwinding into the close.
+        </p>
+
+        <h4>Difference</h4>
+        <p>
+            PE OI Chg – CE OI Chg for that time range.
+        </p>
+        <ul>
+            <li>
+                <b>Negative value</b> (like –5,46,814 at 15:30) means call change &gt; put change,
+                so intraday additions are more on the call side.
+            </li>
+            <li>
+                <b>Positive value</b> would mean put change &gt; call change.
+            </li>
+        </ul>
+        <p>
+            This tells you which side is dominating fresh intraday positions.
+        </p>
+
+        <h4>PCR (Change-based)</h4>
+        <p>
+            Here PCR is calculated using PE OI Chg ÷ CE OI Chg for the selected range.
+        </p>
+        <p>
+            PCR around 0.77–0.81 in your rows means fresh call activity is higher than fresh put activity.
+        </p>
+        <p>
+            Values below 1 imply intraday traders are more aggressive on calls than on puts
+            (short-term bullishness).
+        </p>
+
+        <h4>Intraday PCR</h4>
+        <p>
+            On this page, Intraday PCR is effectively the same concept,
+            focusing purely on today’s change/volume in puts vs calls
+            (not cumulative total OI).
+            In your screenshot it matches PCR (0.77, 0.76, 0.81, 0.79),
+            reinforcing the same sentiment: more call buildup intraday.
+        </p>
+
+        <h4>Max Pain</h4>
+        <p>
+             the strike where total option buyers would lose the most at expiry
+            (here 25,900 in all rows).
+        </p>
+        <ul>
+            <li>
+                When shown in <b>green</b>, max pain is above current LTP
+                (price below the magnet level).
+            </li>
+            <li>
+                When shown in <b>red</b>, max pain would be below LTP
+                (price above the magnet level).
+            </li>
+        </ul>
+        <p>
+            In this image, Nifty is near 25,860–25,887, and Max Pain is 25,900,
+            so it appears green, indicating price is just below that max-pain strike.
+        </p>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

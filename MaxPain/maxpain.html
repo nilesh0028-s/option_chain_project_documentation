@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body class="bg-white text-dark">
+    <div class="container my-5 p-4 border rounded shadow-sm">
+        <h2 class="pb-2 border-bottom">What is MaxPain ?</h2>
+        <p>
+            Max pain (also called “maximum pain price”) is the strike price where option buyers, in total, would lose
+            the most money at expiry and option sellers would lose the least amount of money .
+        </p>
+        <p>
+            At this price, the maximum number of call and put options expire worthless or with very little value, so
+            most buyers lose their premiums while sellers keep most of what they collected.
+        </p>
+        <p>
+            <strong>
+                Many traders believe that, as expiry comes closer, the underlying price sometimes moves toward this
+                max‑pain strike, because big option sellers try to hedge or manage their risk around that level. so max
+                pain is not a guarantee or a magic target, just one way to see how positions are stacked in the option
+                chain.</strong>
+        </p>
+        <div class="border-bottom"></div>
+        <div class="text-center my-4">
+            <img src="assets/image1.png" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+
+    </div>
+    <div class="container my-5 p-4 border rounded shadow-sm">
+        <h3 class="pb-2">How to claculate MaxPain?</h3>
+        <p>
+            To calculate max pain, you need to look at the open interest (OI) for all the call and put options at each
+            strike price. Open interest is the total number of outstanding option contracts that have not been exercised
+            or closed.</p>
+
+        <div class="text-center my-4">
+            <img src="assets/image2.png" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+        <h2>How to Read This Chart</h2>
+
+        <p>
+            This chart helps us understand how interest is distributed across different price levels.
+            Each part of the chart represents a specific meaning.
+        </p>
+
+        <ul>
+            <li>
+                <strong>X-axis (Horizontal Axis):</strong><br>
+                Shows the strike prices such as <strong>100, 110, and 120</strong>.
+                These are the price levels where traders have placed their expectations.
+            </li>
+
+            <li>
+                <strong>Y-axis (Vertical Axis):</strong><br>
+                Represents <strong>Open Interest</strong>, which means how many active positions
+                exist at each strike price.
+            </li>
+        </ul>
+
+        <p>
+            By comparing the height of the bars at each strike price, we can understand
+            where interest is balanced and where it is heavily concentrated.
+        </p>
+
+        <h3 class="pb-2"> Chart Explanation (Based on Table)</h3>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Strike</th>
+                    <th>Call OI</th>
+                    <th>Put OI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>100</td>
+                    <td>1000</td>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <td>110</td>
+                    <td>800</td>
+                    <td>600</td>
+                </tr>
+                <tr>
+                    <td>120</td>
+                    <td>300</td>
+                    <td>1200</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="pb-2">Max Pain Case Analysis (Based on Table)</h3>
+        <div class="border-bottom"></div>
+
+        <h3> Case 1: Strike 100</h3>
+        <ul>
+            <li>Very high interest on the upper-side expectation</li>
+            <li>Very few people expect the price to stay below this level</li>
+            <li>If expiry happens here, many people lose money</li>
+            <li><strong>Result:</strong> High pain</li>
+        </ul>
+
+        <h3> Case 2: Strike 110</h3>
+        <ul>
+            <li>Interest is balanced on both sides</li>
+            <li>Neither side is too dominant</li>
+            <li>Loss is spread across participants</li>
+            <li><strong>Result:</strong> Lowest overall pain </li>
+        </ul>
+
+        <h3> Case 3: Strike 120</h3>
+        <ul>
+            <li>Very high interest on the lower-side expectation</li>
+            <li>Very few people expect the price to stay above this level</li>
+            <li>Expiry here again causes heavy loss</li>
+            <li><strong>Result:</strong> High pain</li>
+        </ul>
+
+        <h3>Max Pain Conclusion</h3>
+        <p>
+            The strike price where interest is most balanced creates the least total loss.
+        </p>
+
+        <p>
+            <strong>From this data:</strong> Max Pain = <strong>110</strong>
+        </p>
+
+
+
+
+    </div>
+    <div class="container my-5 p-4 border rounded shadow-sm">
+
+        <h3 class="pb-2">Why Is It Called “Pain”?</h3>
+        <p>
+            It is called <strong>Max Pain</strong> because it shows the price level where
+            option buyers feel the most pain by losing most of the premiums they paid.
+        </p>
+
+        <p>
+            At the same level, sellers feel the least pain because
+            they are able to keep most of the money they collected.
+        </p>
+
+        <h3 class="pb-2">How Traders Actually Use Max Pain</h3>
+        <p>
+            Some traders use Max Pain only as a <strong>reference level</strong>,
+            especially near expiry, to check whether the price is moving
+            toward or away from it.
+        </p>
+
+        <p>
+            Max Pain is often combined with other market information such as:
+        </p>
+
+        <ul>
+            <li>Support and resistance levels</li>
+            <li>Open interest build-up</li>
+            <li>Market trend</li>
+            <li>Trading volume</li>
+        </ul>
+
+        <p>
+            <strong>Max Pain is one tool for expiry analysis, not a stand-alone signal to buy or sell.</strong>
+                
+            
+        </p>
+
+        <h3 class="pb-2">Limitations of Max Pain</h3>
+        <ul>
+            <li>
+                Max Pain can change when open interest changes, so it is not a fixed level.
+            </li>
+            <li>
+                Big news events, price gaps, or strong trends can move the market far away
+                from the Max Pain level.
+            </li>
+            <li>
+                Max Pain only shows where losses would be highest if the price closes there;
+                it does not guarantee that the price will move to that level.
+            </li>
+        </ul>
+
+    </div>
+
+
+
+</body>
+
+</html>
