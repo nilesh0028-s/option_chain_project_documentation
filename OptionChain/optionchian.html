@@ -15,11 +15,6 @@
     <div class="container my-5 p-4 border rounded shadow-sm">
 
           <h2 class="pb-2 border-bottom">Headers</h2>
-           <div class="text-center my-4">
-            <img src="assets/image_3.png" class="img-fluid img-thumbnail" alt="error loading image">
-           </div>
-
-            <h2 class="pb-2 border-bottom"> Explanation of Headers</h2>
             <div class="text-center my-4">
             <img src="assets/image_4.png" class="img-fluid img-thumbnail explain-img" alt="error loading image">
             </div>
@@ -67,6 +62,17 @@
                     <li>  The selected time is highlighted in the center, showing the exact moment for which the option chain data is displayed. This makes it easy to analyze how prices, Open Interest, and volume changed over time.</li>
                 </ul>
             </p>
+            <h3 class="pb-2 border-bottom">Settings</h3>
+
+            <div class="text-center my-4">
+            <img src="assets/image_setting.gif" class="img-fluid img-thumbnail" alt="error loading image">
+           </div>
+           <ul class="pb-2 fs-5">
+                <li><strong>Column Selection:</strong> Choose which data columns to display in the option chain table, such as Open Interest, Volume, Greeks, etc.</li>
+                <li><strong>Display Preferences:</strong> Adjust how data is presented, including sorting options and visual styles.</li>
+                <li><strong>Save Settings:</strong> Save your customized settings for future sessions to maintain a consistent view.</li>
+           </ul>
+    
  </div>   
 
     <div class="container my-5 p-4 border rounded shadow-sm">
@@ -156,17 +162,337 @@
             <div class="border-bottom"></div>
         </ul>
     </div>
-    <div class="container my-5 p-4 border rounded shadow-sm">
+    <div class=" container my-5 p-4 border rounded shadow-sm">
+         <h2 class="pb-2 border-bottom">Greeks-Explanation</h2>
+            <div class="text-center my-4">
+            <img src="assets/image_geeks.png" class="img-fluid img-thumbnail explain-img" alt="error loading image">
+            </div>
 
-        <h3 class="pb-2">What is Strike Price?</h3>
-        <p>Strike price is the fixed price written in the option contract at which you can buy or sell the underlying
+        <h3 class="pb-2"> <strong>1.</strong>Vega – effect of volatility</h3>
+        <ul class="pb-2 fs-5">
+            <li>Vega shows how much the option price will change if implied volatility changes by 1 percentage point.
+            </li>
+            <li>Higher volatility makes options more expensive; lower volatility makes them cheaper.</li>
+            <li>Example: Vega = 2.5 means if IV goes from 20% to 21%, the option price is expected to increase by about
+                2.5 points.</li>
+            <li>Options with more time to expiry and near-the-money strikes usually have higher vega.</li>
+        </ul>  
+        <h3 class="pb-2"><strong>2.</strong> Gamma</h3>
+        <ul>
+            <li>Gamma tells how much delta itself will change when the underlying moves by 1 point.</li>
+            <li>If delta is “speed” of the option, gamma is the “acceleration” – how quickly that speed changes.</li>
+            <li>Example: A call has delta 0.40 and gamma 0.05. If Nifty goes up 1 point, new delta ≈ 0.45 (0.40 + 0.05).
+                If it goes up another 1 point, delta may rise again to about 0.50.</li>
+            <li>Gamma is usually highest for options near the current market price and close to expiry, because there
+                the option’s behaviour can flip quickly between acting like “almost worthless” and “very valuable”.</li>
+        </ul>
+         <h3 class="pb-2"><strong>3.</strong> Theta – effect of time (time decay)</h3>
+        <ul>
+            <li>Theta shows how much an option's value is expected to decrease each day just because time is passing.
+            </li>
+            <li>For option buyers, theta is usually negative → the option loses value daily.</li>
+            <li><strong>Example:</strong> Theta = −3 → if all else stays the same, the option loses about <strong>3
+                    points in value per day</strong>.</li>
+            <li>Time decay accelerates as the expiry date approaches, especially for
+                options near the money.</li>
+        </ul>
+
+        <h3 class="pb-2"><strong>4.</strong> Delta – effect of price change</h3>
+        <ul>
+            <li>Delta tells how much the option price is expected to move if the underlying moves by 1 point.</li>
+            <li>Call options have positive delta (they gain when price goes up); put options have negative delta (they
+                gain when price goes down).</li>
+            <li>Example: If a call has delta 0.40 and Nifty moves up 1 point, the option price is expected to go up
+                about 0.40 points.</li>
+            <li>A delta close to 0 means the option hardly reacts to small price moves; a delta close to 1 (or −1 for
+                puts) means it moves almost point‑for‑point with the underlying.</li>
+        </ul>
+        <h3 class="pb-2">Relationships Between all Greeks?</h3>
+        <h4 class="pb-2">Delta and Gamma</h4>
+        <ul>
+            <li>Delta is “first reaction” of the option price when the underlying moves; Gamma is how fast that reaction
+                itself changes.</li>
+            <li>When Gamma is high, Delta can jump quickly with even a small move in the underlying, so the option
+                becomes very sensitive.</li>
+            <li>When Gamma is low, Delta changes slowly and the option behaves more steadily.</li>
+        </ul>
+        <h4 class="pb-2">Gamma and Theta</h4>
+
+        <ul>
+            <li>Options with high Gamma (very responsive to price moves) usually have high Theta (they lose value faster
+                with time).</li>
+            <li>This is the trade‑off: if you want strong benefit from small price moves (high Gamma), you must accept
+                faster time decay (more negative Theta).</li>
+            <li>Deep in‑the‑money or far out‑of‑the‑money options normally have lower Gamma and also lower Theta
+                compared to at‑the‑money options.</li>
+        </ul>
+        <h4 class="pb-2">Vega with Delta and Gamma</h4>
+        <ul>
+            <li>Vega measures sensitivity to implied volatility; when implied volatility changes, it also affects Delta
+                and Gamma.</li>
+            <li>If volatility increases, option prices rise and both calls and puts tend to have Deltas move closer to
+                0.5 (more uncertainty), and Gamma around the money often increases.</li>
+            <li>If volatility falls, Deltas of in‑the‑money options move closer to 1 (or −1 for puts) and Deltas of
+                out‑of‑the‑money options move closer to 0, while Gamma around the money tends to drop.</li>
+        </ul>
+
+        <h4 class="pb-2">Time to expiry and all Greeks</h4>
+        <ul>
+            <li>With more time left to expiry, Deltas are softer (closer to 0.5), Gamma is smaller, Theta is slower, and
+                Vega is larger.</li>
+            <li>As expiry gets closer, Deltas move quickly toward 1 or 0, Gamma spikes near the money, Theta decay
+                speeds up there, and Vega shrinks.</li>
+            <li>So time passing doesn’t only increase Theta decay; it also reshapes Delta, Gamma, and Vega together.
+            </li>
+        </ul>
+    </div>
+    <div class="container my-5 p-4 border rounded shadow-sm">      
+         <h2 class="pb-2 border-bottom">Explanation-Middle column</h2>
+            <div class="text-center my-4">
+            <img src="assets/image_middle.png" class="img-fluid img-thumbnail explain-img" alt="error loading image">
+            </div>
+        <h3 class="pb-2"> <strong>1.</strong>Strike Price</h3>
+        <p class="pb-2 fs-5">Strike price is the fixed price written in the option contract at which you can buy or sell the underlying
             asset, depending on whether it is a call or a put option.</p>
-        <p>In an option chain, each row has one strike price like 21,800 or 22,000. This number is the agreed price for
+        <p class="pb-2 fs-5">In an option chain, each row has one strike price like 21,800 or 22,000. This number is the agreed price for
             the deal: for a call option it is the price at which you have the right to buy, and for a put option it is
             the price at which you have the right to sell. The strike stays constant from the day the option is created
             until expiry, even though the market price keeps moving up and down. How far the market is from the strike
             helps decide whether the option is cheap or costly and whether it is in-the-money, at-the-money, or
             out-of-the-money.</p>
+        <h3 class="pb-2"><strong>2.</strong> OI PCR (Open Interest Put–Call Ratio)</h3>
+        <ul class="pb-2 fs-5">
+            <li>OI PCR compares total put open interest to total call open interest for an index or stock.</li>
+            <li><strong>Formula</strong>:</li>
+            <li>OI PCR = (Total Put OI) ÷ (Total Call OI).</li>
+
+        </ul>
+        <p><strong>Example:</strong></p>
+        <ul class="pb-2 fs-5">
+            <li>Total Put OI = 150,000 contracts</li>
+            <li>Total Call OI = 100,000 contracts</li>
+            <li>
+                Apply formula:<br>
+                OI PCR = Total Put OI ÷ Total Call OI
+            </li>
+            <li>
+                OI PCR = 150,000 ÷ 100,000 = 1.5
+            </li>
+            <li>
+                Interpretation: OI PCR is above 1 → more put OI than call OI → traders are expecting a downside.
+            </li>
+        </ul>
+        <h3 class="pb-2"><strong>3.</strong> COI PCR(Change in Open Interest Put–Call Ratio)</h3>
+        <p>It shows which side added more fresh positions today —the <strong>put seller</strong> or the <strong>call
+                seller</strong>.</p>
+        <p><strong>COI PCR = Change in Put OI ÷ Change in Call OI</strong></p>
+        <ul class="pb-2 fs-5">
+            <li>
+                <strong>If COI PCR is above 1:</strong><br>
+                • More put OI was added than call OI.<br>
+                • Put seller are stronger → the market has a <strong>bullish bias</strong>.
+            </li>
+            <br>
+            <li>
+                <strong>If COI PCR is below 1:</strong><br>
+                • More call OI was added than put OI.<br>
+                • Call seller are stronger → the market has a <strong>bearish bias</strong>.
+            </li>
+        </ul>
+        <h5>Example 1</h5>
+        <ul class="pb-2 fs-5">
+        <li>Put OI added today: <strong>30,000</strong></li>
+        <li>Call OI added today: <strong>10,000</strong></li>
+        <li>COI PCR =30,000 ÷ 10,000 = 3</li>
+        <li>This means put sellers are much more active, so the market has a <strong>bullish</strong></li>
+        </ul>
+        <h5>Example 2</h5>
+        <ul class="pb-2 fs-5">
+        <li>Put OI added today: <strong>15,000</strong></li>
+        <li>Call OI added today: <strong>30,000</strong></li>
+        <li>COI PCR = 15,000 ÷ 30,000 = 0.5</li>
+        <li>This means call sellers are more active, so the market has a <strong>bearish</strong></li>
+        </ul>
+        <h3 class="pb-2">Difference Between COI PCR v/s OI PCR</h3>
+        <ul class="pb-2 fs-5">
+            <li>OI PCR uses total Open Interest.</li>
+            <li>OI PCR shows overall market sentiment.</li>
+            <li>OI PCR changes slowly.</li>
+            <li>OI PCR is better for broader trend bias.</li>
+        </ul>
+
+        <ul class="pb-2 fs-5">
+            <li>COI PCR uses change in Open Interest.</li>
+            <li>COI PCR shows today's fresh sentiment.</li>
+            <li>COI PCR changes quickly.</li>
+            <li>COI PCR is better for intraday strength/pressure.</li>
+        </ul>
+        <h3 class="pb-2"><strong>4.</strong> COI Diff (Change in Open Interest Difference)</h3>
+
+        <p class="pb-2 fs-5">
+            It shows <strong>who is stronger right now at that strike put side or call side.</strong>
+        </p>
+
+        <ul class="pb-2 fs-5">
+            <li><strong>Positive number</strong> → Put sellers are stronger (Bullish)</li>
+            <li><strong>Negative number</strong> → Call sellers are stronger (Bearish)</li>
+        </ul>
+
+        <h4 class="pb-2">Formula.</h4>
+        <p class="pb-2 fs-5">
+            <strong>COI Diff = Put OI − Call OI</strong>
+        </p>
+
+        <h4 class="pb-2">Easy Example</h4>
+        <p class="pb-2 fs-5">Call OI = <strong>10,000</strong></p>
+        <p class="pb-2 fs-5">Put OI = <strong>13,000</strong></p>
+
+        <p class="pb-2 fs-5">
+            <strong>COI Diff = 13,000 − 10,000 = +3,000</strong>
+        </p>
+
+        <p class="pb-2 fs-5">
+            <em>Positive value → Buyers / support side is strong (Bullish signal)</em>
+        </p>
+        <h3 class="pb-2"><strong>5.</strong> OI Str (Open Interest Strength %)</h3>
+
+        <p class="pb-2 fs-5">
+            OI Str shows <strong>which side is stronger</strong> at a strike price and <strong>how strong it is</strong> in percentage.
+        </p>
+
+        <p class="pb-2 fs-5">
+            <strong>How to read:</strong><br>
+            100% → Only one side is present<br>
+            80–99% → One side is dominating<br>
+            Around 50% → Both sides are equal
+        </p>
+
+        <p class="pb-2 fs-5">
+            <strong>Simple idea:</strong><br>
+            The side with higher Open Interest is the stronger side.
+        </p>
+
+        <p class="pb-2 fs-5">
+            <strong>Formula:</strong><br>
+            OI Str = (Higher OI ÷ Total OI) × 100
+        </p>
+
+        <p class="pb-2 fs-5">
+            <strong>Example:</strong><br>
+            Call OI = 2,000<br>
+            Put OI = 8,000
+        </p>
+
+        <p class="pb-2 fs-5">
+            Total OI = 10,000<br>
+            OI Str = (8,000 ÷ 10,000) × 100 = <strong>80%</strong>
+        </p>
+
+        <p class="pb-2 fs-5">
+            <em>80% means the Put side is much stronger and acting as support.</em>
+        </p>
+
+         <h3 class="pb-2"> <strong>6.</strong> Vol PCR (Volume Put-Call Ratio)</h3>
+        <p class="pb-2 fs-5">
+            Vol PCR shows <strong>where today's trading activity is happening more</strong>.
+            It compares Put option trading with Call option trading.
+        </p>
+
+        <p class="pb-2 fs-5">
+            In simple words, it tells us whether traders are trading
+            <strong>more Puts or more Calls today</strong>.
+        </p>
+
+        <p class="pb-2 fs-5">
+            <strong>Formula:</strong><br>
+            Vol PCR = Put Volume ÷ Call Volume
+        </p>
+
+        <p class="pb-2 fs-5">
+            <strong>Example:</strong><br>
+            Call Volume = 165<br>
+            Put Volume = 238,571
+        </p>
+
+        <p class="pb-2 fs-5">
+            Vol PCR = 238,571 ÷ 165 = <strong>1445</strong>
+        </p>
+
+        <p class="pb-2 fs-5">
+            <strong>How to read the value:</strong><br>
+            Vol PCR &lt; 1 → More Call trading<br>
+            Vol PCR ≈ 1 → Equal Call &amp; Put trading<br>
+            Vol PCR &gt; 1 → More Put trading<br>
+            Very high Vol PCR → Extreme Put activity
+        </p>
+
+        <p class="pb-2 fs-5">
+            <em>
+                In this example, Vol PCR is extremely high, meaning almost all trading
+                activity is happening on the Put side.
+            </em>
+        </p>
+        <h3 class="pb-2"><strong>7.</strong> LTP Str (Last Traded Price Strength)</h3>
+
+        <p class="pb-2 fs-5">
+            LTP Str shows <strong>which option side is stronger</strong> at a strike price
+            based on <strong>price movement</strong>.
+        </p>
+
+        <p class="pb-2 fs-5">
+            It focuses only on how the <strong>Call and Put prices are moving</strong>,
+            not on volume or open interest.
+        </p>
+
+        <ul class="pb-2 fs-5">
+            <li>Based on Last Traded Price (LTP)</li>
+            <li>Shows price strength, not quantity</li>
+            <li>No fixed formula is used</li>
+            <li>Behavior-based indicator</li>
+            <li>Rising price means increasing strength</li>
+            <li>Falling price means decreasing strength</li>
+        </ul>
+
+        <p class="pb-2 fs-5">
+            <strong>Simple understanding:</strong><br>
+            Call price up &amp; Put price down → Call side strong<br>
+            Put price up &amp; Call price down → Put side strong<br>
+            Both moving same direction → No clear strength
+        </p>
+        <p class="pb-2 fs-5">
+            <em>LTP Str helps identify real-time price pressure in the market.</em>
+        </p>
+         
+       <h3> <strong>8.</strong> Vol Str (Volume Strength)</h3>
+
+          <p class="pb-2 fs-5">
+           Vol Str shows <strong>which option side has stronger trading participation</strong>
+            at a strike price.
+          </p>
+
+  <p class="pb-2 fs-5">
+    It is based on <strong>trading volume</strong>, which means the number of trades
+    happening right now.
+  </p>
+
+  <ul class="pb-2 fs-5">
+    <li>Based on option trading volume</li>
+    <li>Shows trader participation</li>
+    <li>Higher volume means stronger interest</li>
+    <li>Helps confirm real market activity</li>
+    <li>Useful for identifying strong strikes</li>
+  </ul>
+
+  <p class="pb-2 fs-5">
+    <strong>Simple understanding:</strong><br>
+    Higher Call volume → Call side strong<br>
+    Higher Put volume → Put side strong<br>
+    Very high volume → Strong conviction
+  </p>
+
+  <p class="pb-2 fs-5">
+    <em>Vol Str confirms whether the move is supported by real trading activity.</em>
+  </p>
 
         <h3 class="pb-2">What is OI(Open interest)</h3>
         <p>
@@ -406,74 +732,6 @@
                 This means: LTP is 5% above the VWAP (buyers stronger).
             </li>
         </ul>
-        <h3 class="pb-2">OI PCR (Open Interest Put–Call Ratio)</h3>
-
-        <ul>
-            <li>OI PCR compares total put open interest to total call open interest for an index or stock.</li>
-            <li><strong>Formula</strong>:</li>
-            <li>OI PCR = (Total Put OI) ÷ (Total Call OI).</li>
-
-        </ul>
-        <p><strong>Example:</strong></p>
-        <ul>
-            <li>Total Put OI = 150,000 contracts</li>
-            <li>Total Call OI = 100,000 contracts</li>
-            <li>
-                Apply formula:<br>
-                OI PCR = Total Put OI ÷ Total Call OI
-            </li>
-            <li>
-                OI PCR = 150,000 ÷ 100,000 = 1.5
-            </li>
-            <li>
-                Interpretation: OI PCR is above 1 → more put OI than call OI → traders are expecting a downside.
-            </li>
-        </ul>
-        <h3 class="pb-2"> COI PCR(Change in Open Interest Put–Call Ratio)</h3>
-        <p>It shows which side added more fresh positions today —the <strong>put seller</strong> or the <strong>call
-                seller</strong>.</p>
-        <p><strong>COI PCR = Change in Put OI ÷ Change in Call OI</strong></p>
-        <ul>
-            <li>
-                <strong>If COI PCR is above 1:</strong><br>
-                • More put OI was added than call OI.<br>
-                • Put seller are stronger → the market has a <strong>bullish bias</strong>.
-            </li>
-            <br>
-            <li>
-                <strong>If COI PCR is below 1:</strong><br>
-                • More call OI was added than put OI.<br>
-                • Call seller are stronger → the market has a <strong>bearish bias</strong>.
-            </li>
-        </ul>
-        <h5>Example 1</h5>
-        <p>Put OI added today: <strong>30,000</strong></p>
-        <p>Call OI added today: <strong>10,000</strong></p>
-        <p>COI PCR =30,000 ÷ 10,000 = 3</p>
-        <p>This means put sellers are much more active, so the market has a <strong>bullish</strong></p>
-        <h5>Example 2</h5>
-        <p>Put OI added today: <strong>15,000</strong></p>
-        <p>Call OI added today: <strong>30,000</strong></p>
-        <p>COI PCR = 15,000 ÷ 30,000 = 0.5</p>
-        <p>This means call sellers are more active, so the market has a <strong>bearish</strong></p>
-
-        <h3 class="pb-2">Difference Between COI PCR v/s OI PCR</h3>
-
-
-        <ul>
-            <li>OI PCR uses total Open Interest.</li>
-            <li>OI PCR shows overall market sentiment.</li>
-            <li>OI PCR changes slowly.</li>
-            <li>OI PCR is better for broader trend bias.</li>
-        </ul>
-
-        <ul>
-            <li>COI PCR uses change in Open Interest.</li>
-            <li>COI PCR shows today's fresh sentiment.</li>
-            <li>COI PCR changes quickly.</li>
-            <li>COI PCR is better for intraday strength/pressure.</li>
-        </ul>
-
         <h3 class="pb-2">OI Percentile</h3>
         <p>OI Percentile tells you how high or low today’s OI is compared to its past levels.</p>
 
@@ -506,83 +764,6 @@
             <li>&gt;+0.3 → Bullish</li>
             <li>-0.3 to +0.3 → Neutral</li>
             <li>&lt;-0.3 → Bearish</li>
-        </ul>
-        <h3 class="pb-2">Theta – effect of time (time decay)</h3>
-        <ul>
-            <li>Theta shows how much an option's value is expected to decrease each day just because time is passing.
-            </li>
-            <li>For option buyers, theta is usually negative → the option loses value daily.</li>
-            <li><strong>Example:</strong> Theta = −3 → if all else stays the same, the option loses about <strong>3
-                    points in value per day</strong>.</li>
-            <li>Time decay accelerates as the expiry date approaches, especially for
-                options near the money.</li>
-        </ul>
-
-        <h3 class="pb-2">Vega – effect of volatility</h3>
-        <ul>
-            <li>Vega shows how much the option price will change if implied volatility changes by 1 percentage point.
-            </li>
-            <li>Higher volatility makes options more expensive; lower volatility makes them cheaper.</li>
-            <li>Example: Vega = 2.5 means if IV goes from 20% to 21%, the option price is expected to increase by about
-                2.5 points.</li>
-            <li>Options with more time to expiry and near-the-money strikes usually have higher vega.</li>
-        </ul>
-        <h3 class="pb-2">Delta – effect of price change</h3>
-        <ul>
-            <li>Delta tells how much the option price is expected to move if the underlying moves by 1 point.</li>
-            <li>Call options have positive delta (they gain when price goes up); put options have negative delta (they
-                gain when price goes down).</li>
-            <li>Example: If a call has delta 0.40 and Nifty moves up 1 point, the option price is expected to go up
-                about 0.40 points.</li>
-            <li>A delta close to 0 means the option hardly reacts to small price moves; a delta close to 1 (or −1 for
-                puts) means it moves almost point‑for‑point with the underlying.</li>
-        </ul>
-        <h3 class="pb-2">Gamma</h3>
-        <ul>
-            <li>Gamma tells how much delta itself will change when the underlying moves by 1 point.</li>
-            <li>If delta is “speed” of the option, gamma is the “acceleration” – how quickly that speed changes.</li>
-            <li>Example: A call has delta 0.40 and gamma 0.05. If Nifty goes up 1 point, new delta ≈ 0.45 (0.40 + 0.05).
-                If it goes up another 1 point, delta may rise again to about 0.50.</li>
-            <li>Gamma is usually highest for options near the current market price and close to expiry, because there
-                the option’s behaviour can flip quickly between acting like “almost worthless” and “very valuable”.</li>
-        </ul>
-        <h3 class="pb-2">Relationships Between all Greeks?</h3>
-        <h4 class="pb-2">Delta and Gamma</h4>
-        <ul>
-            <li>Delta is “first reaction” of the option price when the underlying moves; Gamma is how fast that reaction
-                itself changes.</li>
-            <li>When Gamma is high, Delta can jump quickly with even a small move in the underlying, so the option
-                becomes very sensitive.</li>
-            <li>When Gamma is low, Delta changes slowly and the option behaves more steadily.</li>
-        </ul>
-        <h4 class="pb-2">Gamma and Theta</h4>
-
-        <ul>
-            <li>Options with high Gamma (very responsive to price moves) usually have high Theta (they lose value faster
-                with time).</li>
-            <li>This is the trade‑off: if you want strong benefit from small price moves (high Gamma), you must accept
-                faster time decay (more negative Theta).</li>
-            <li>Deep in‑the‑money or far out‑of‑the‑money options normally have lower Gamma and also lower Theta
-                compared to at‑the‑money options.</li>
-        </ul>
-        <h4 class="pb-2">Vega with Delta and Gamma</h4>
-        <ul>
-            <li>Vega measures sensitivity to implied volatility; when implied volatility changes, it also affects Delta
-                and Gamma.</li>
-            <li>If volatility increases, option prices rise and both calls and puts tend to have Deltas move closer to
-                0.5 (more uncertainty), and Gamma around the money often increases.</li>
-            <li>If volatility falls, Deltas of in‑the‑money options move closer to 1 (or −1 for puts) and Deltas of
-                out‑of‑the‑money options move closer to 0, while Gamma around the money tends to drop.</li>
-        </ul>
-
-        <h4 class="pb-2">Time to expiry and all Greeks</h4>
-        <ul>
-            <li>With more time left to expiry, Deltas are softer (closer to 0.5), Gamma is smaller, Theta is slower, and
-                Vega is larger.</li>
-            <li>As expiry gets closer, Deltas move quickly toward 1 or 0, Gamma spikes near the money, Theta decay
-                speeds up there, and Vega shrinks.</li>
-            <li>So time passing doesn’t only increase Theta decay; it also reshapes Delta, Gamma, and Vega together.
-            </li>
         </ul>
     </div>
 
