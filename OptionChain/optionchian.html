@@ -38,7 +38,7 @@
                 Options typically have multiple expiry dates, and selecting one updates the displayed data accordingly.
             </p>
 
-            <h3 class="pb-2 border-bottom"> <strong>4.</strong>Explanation  of Historical data</h3>
+            <h4 class="pb-2 border-bottom"> <strong>4.</strong>Explanation  of Historical data</h4>
 
             <div class="text-center my-4">
             <img src="assets/image_6.gif" class="img-fluid img-thumbnail" alt="error loading image">
@@ -47,7 +47,7 @@
                 The Historical option allows you to view option chain data from a past time instead of live market data.
                  When enabled, the table stops updating in real time and displays a previously recorded snapshot of prices, Open Interest, and volume.This helps users review earlier market conditions and analyze how the option chain behaved at a specific moment.
             </p>
-             <h3 class="pb-2 border-bottom"> <strong>5.</strong>Adjusting time in  Historical data</h3>
+             <h4 class="pb-2 border-bottom"> <strong>5.</strong>Adjusting time in  Historical data</h4>
 
             <div class="text-center my-4">
             <img src="assets/image_7.gif" class="img-fluid img-thumbnail" alt="error loading image">
@@ -71,9 +71,135 @@
                 <li><strong>Column Selection:</strong> Choose which data columns to display in the option chain table, such as Open Interest, Volume, Greeks, etc.</li>
                 <li><strong>Display Preferences:</strong> Adjust how data is presented, including sorting options and visual styles.</li>
                 <li><strong>Save Settings:</strong> Save your customized settings for future sessions to maintain a consistent view.</li>
-           </ul>
-    
- </div>   
+           </ul>   
+ </div> 
+   <div class="container my-5 p-4 border rounded shadow-sm">
+        <h2 class="pb-2 border-bottom">Market Snapshot</h2>
+         <div class="text-center my-4">
+            <img src="assets/image_snapshot.png" class="img-fluid img-thumbnail explain-img" alt="error loading image">
+         </div>
+
+
+        <h4 class="pb-2"> <strong>1.</strong> What is LOT</h4> 
+        <p class="pb-2 fs-5">
+            In the options market, you cannot buy or sell NIFTY one-by-one. The exchange allows trading only in fixed bundles. That fixed bundle is called a LOT.
+        </p>
+
+        <p class="pb-2 fs-5">
+            For NIFTY: <strong>1 LOT = 65 NIFTY units</strong> means:
+            This lot size (65) is fixed by the exchange,
+            not by traders.
+        </p>
+
+        <h4 class="pb-2"><strong>2.</strong> Put Call Ratio</h4>
+        <p class="pb-2 fs-5">Put–Call Ratio (PCR) is a market‑sentiment indicator that compares how many put options are being traded (or
+            are open) to how many call options are being traded (or are open) for the same index or stock. It tells you
+            whether traders, as a group, are more focused on protection/downside (puts) or on upside (calls).</p>
+         <h5 class="pb-2">Formula of Put–Call Ratio (PCR)</h5>
+
+        <p><strong>Formula:</strong></p>
+        <p class="pb-2 fs-5">
+            Put–Call Ratio (PCR) = Total Put Open Interest ÷ Total Call Open Interest
+        </p>
+
+        <p><strong>Example:</strong></p>
+
+        <ul class="pb-2 fs-5">
+            <li>Total Put Open Interest = 24,00,000</li>
+            <li>Total Call Open Interest = 20,00,000</li>
+        </ul>
+
+        <p class="pb-2 fs-5">
+            <strong>Calculation:</strong><br>
+            PCR = 24,00,000 ÷ 20,00,000 = <strong>1.20</strong>
+        </p>
+
+        <h3 class="pb-2">What PCR Values Mean?</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>PCR Range</th>
+                    <th>Market View</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>&gt; 1.2</td>
+                    <td>Bullish</td>
+                </tr>
+                <tr>
+                    <td>0.8 – 1.2</td>
+                    <td>Neutral</td>
+                </tr>
+                <tr>
+                    <td>&lt; 0.8</td>
+                    <td>Bearish</td>
+                </tr>
+            </tbody>
+        </table>
+
+    <h3 class="pb-2"> <strong>3.</strong> Max Pain</h3>
+    <p class="pb-2 fs-5">
+        Max Pain is the price level at which the maximum number of option buyers (both CALL and PUT) lose money at expiry, 
+        because most options expire worthless, allowing option sellers to earn the highest profit.
+    </p>
+
+    <p class="pb-2 fs-5">
+        <strong>Price breakdown:</strong><br>
+        Above this price – most CALL buyers lose<br>
+        Below this price – most PUT buyers lose<br>
+        Near this price – both CALL and PUT buyers lose
+    </p>
+
+    <p class="pb-2 fs-5">
+        This is why prices often move or settle near the Max Pain level close to expiry,
+        especially in non-trending markets.
+    </p>
+    <h3 class="pb-2"> <strong>4.</strong> Futures Price(FUT)</h3>
+
+    <p class="pb-2 fs-5">
+        Futures Price is the price at which traders are currently willing to buy or sell NIFTY for a future date,
+        and it reflects the expectation and direction of big traders in the market.
+    </p>
+
+    <p class="pb-2 fs-5">
+        <strong>Price breakdown:</strong><br>
+        Falling futures price – selling pressure and bearish expectation<br>
+        Rising futures price – buying pressure and bullish expectation<br>
+        Large price movement – strong conviction by big players
+    </p>
+
+    <p class="pb-2 fs-5">
+        Since futures are mainly traded by institutions,
+        the futures price often leads the spot market and signals direction early.
+    </p>
+       <h4 class="pb-2"> <strong>5.</strong> NIFTY (Spot Price)</h4>
+
+      <p class="pb-2 fs-5">
+         NIFTY Spot Price is the current real market value of the NIFTY index,
+         calculated from the prices of its underlying stocks,
+         and it represents the actual position of the market at that moment.
+      </p>
+    <h4 class="pb-2"><strong>6.</strong> IN LOT</h4>
+
+    <p class="pb-2 fs-5">
+        IN LOT is a display setting that converts option data from raw numbers into lot-based values,
+        making it easier to read, compare, and understand the actual trading size.
+    </p>
+
+    <p class="pb-2 fs-5">
+        <strong>Data breakdown:</strong><br>
+        OFF – values are shown as total quantity<br>
+        ON – values are shown as number of lots<br>
+        Same data, different display format
+    </p>
+
+    <p class="pb-2 fs-5">
+        This setting helps traders quickly understand position size
+        without dealing with large and confusing numbers.
+    </p>
+
+ </div>  
 
     <div class="container my-5 p-4 border rounded shadow-sm">
 
