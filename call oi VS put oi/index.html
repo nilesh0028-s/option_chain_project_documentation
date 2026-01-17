@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -11,195 +12,53 @@
 
 <body class="bg-white text-dark">
     <div class="container my-5 p-4 border rounded shadow-sm">
-        <h2 class="pb-2 border-bottom"> What is Call oi V/S put oi?</h2>
-        <h3 class="pb-3S border-bottom"> Why Do We Use This Tool?</h3>
-        <p>
-            Traders and investors use the CALL OI vs PUT OI analysis to understand market psychology and sentiment. When
-            you know whether traders are buying more call options (bullish bets) or put options (bearish bets), you can
-            gauge what the smart money believes will happen next. This helps you make better trading decisions—whether
-            to go long, go short, or stay cautious. It's essentially reading the market's collective mind through option
-            positioning data.
-        </p>
+        <h4 class="pb-2 border-bottom">Header</h4>
         <div class="text-center my-4">
-            <img src="assets/image.png" class="img-fluid img-thumbnail" alt="error loading image">
+            <img src="assets/header3.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
-        <h3 class="pb-2 border-bottom"> Breaking Down the Chart</h3>
-        <p>
-            The chart you're looking at shows real-time dynamics between call and put option activity for Nifty 50
-            expiring on 16-DEC-2025 between the levels of 23,950 to 27,950, with data recorded every 15 minutes
-            (9:15 AM to 3:30 PM market hours).</p>
-        </h3>
-        <h3 class="pb-2 border-bottom"> The Visual Elements</h3>
-        <ul>
-            <li>
-                <strong>Green Line (CE OI):</strong>
-                Shows Call Option Open Interest over time — the total number of unexercised call contracts.
-            </li>
-            <li>
-                <strong>Red Line (PE OI):</strong>
-                Shows Put Option Open Interest over time — the total number of unexercised put contracts.
-            </li>
-            <li>
-                <strong>Gray Line (Stock LTP):</strong>
-                Represents the actual Nifty 50 spot price movement throughout the trading day.
-            </li>
-            <li>
-                <strong>Bar Chart (Left):</strong>
-                A summary showing end-of-session Open Interest:
-                <ul>
-                    <li>CE OI = <strong>23.15 Lakhs</strong></li>
-                    <li>PE OI = <strong>28.08 Lakhs</strong></li>
-                </ul>
-            </li>
-        </ul>
-        <p> <strong> What This Reveals:</strong> The chart shows that put options have higher cumulative positioning
-            (red line stays above green) throughout most of the day, suggesting traders were more defensive/bearish,
-            expecting potential downside moves.</p>
-
-        <h2 class="pb-2">Column Explanation</h2>
-
-        <h3 class="pb-2">Time</h3>
-        <p>
-            The timestamp when the data was recorded. Each row represents data at different intervals during the trading
-            day (15:30, 15:15, 15:00, 14:45, etc.).
-        </p>
-
-        <h3 class="pb-2">Spot LTP (Last Traded Price)</h3>
-        <p>
-            The actual price at which Nifty 50 was trading at that specific time. For example, at 15:30 (market close),
-            Nifty was at 26,027.30. <em>The colored arrow (↓ or ↑) </em> shows if it moved up or down from the previous
-            interval,
-            with the percentage change in parentheses.
-        </p>
-
-        <h3 class="pb-2">PE OI (Put Option Open Interest)</h4>
-            <p>
-                The total number of put option contracts still open (not closed or exercised) at that time, expressed in
-                the
-                given strike range. For example, at 15:30, there were 28,07,856 put contracts outstanding. The red
-                number
-                with ↓ shows it decreased by 4,13,443 contracts since the last interval.
-            </p>
-            <p>
-                Why It Matters: Rising PE OI suggests traders are becoming more defensive. Falling PE OI suggests
-                they're
-                exiting bearish positions.
-            </p>
-
-            <h3 class="pb-2"> CE OI (Call Option Open Interest)</h3>
-            <p>
-                The total number of call option contracts still open at that time. For example, at 15:30, there were
-                23,15,018 call contracts outstanding. The red number with ↓ shows it decreased by 2,86,328 contracts.
-            </p>
-            <p>
-                Why It Matters: Rising CE OI suggests bullish optimism. Falling CE OI suggests traders are trimming long
-                bets.
-            </p>
-
-            <h3 class="pb-2">Difference (PE OI - CE OI)</h3>
-            <p>
-                Shows how much higher put interest is compared to call interest. At 15:30, puts exceeded calls by
-                4,92,838
-                contracts. A positive number means puts dominate (bearish bias), while a negative number would mean
-                calls
-                dominate (bullish bias).
-            </p>
-            <p>
-                <strong>Trading Insight: </strong> Large positive differences suggest traders expect a potential
-                downside move or protection
-                against losses.
-            </p>
-            <h3 class="pb-2 border-bottom">PCR</h3>
-            <p>Put–Call Ratio (PCR) is a market‑sentiment indicator that compares how many put options are being traded
-                (or
-                are open) to how many call options are being traded (or are open) for the same index or stock. It tells
-                you
-                whether traders, as a group, are more focused on protection/downside (puts) or on upside (calls).</p>
-            <h3 class="pb-2">Formula of Put–Call Ratio (PCR)</h3>
-
-            <p><strong>Formula:</strong></p>
-            <p>
-                Put–Call Ratio (PCR) = Total Put Open Interest ÷ Total Call Open Interest
-            </p>
-
-            <p><strong>Example:</strong></p>
-
-            <ul>
-                <li>Total Put Open Interest = 24,00,000</li>
-                <li>Total Call Open Interest = 20,00,000</li>
-            </ul>
-
-            <p>
-                <strong>Calculation:</strong><br>
-                PCR = 24,00,000 ÷ 20,00,000 = <strong>1.20</strong>
-            </p>
-
-            <h3 class="pb-2 border-bottom">What PCR Values Mean?</h3>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>PCR Range</th>
-                        <th>Market View</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>&gt; 1.2</td>
-                        <td>Bullish</td>
-                    </tr>
-                    <tr>
-                        <td>0.8 – 1.2</td>
-                        <td>Neutral</td>
-                    </tr>
-                    <tr>
-                        <td>&lt; 0.8</td>
-                        <td>Bearish</td>
-                    </tr>
-                </tbody>
-            </table>
-            <h3 class="pb-2">Intraday PCR</h3>
-            <p>Intraday PCR measures the ratio of today’s put option activity to today’s call option activity within the
-                trading day. Usually it is calculated using today’s traded volume (or today’s change in OI) of puts
-                divided by today’s traded volume (or change in OI) of calls for that day. It tells you what traders are
-                doing right now during the session, not what they have built over many days.</p>
-            <h3 class="pb-2">Formula and Difference from Normal PCR</h3>
-
-            <p>
-                <strong>Normal PCR</strong> on your NiftyInvest screen uses total PE OI ÷ total CE OI for that expiry
-                and range.
-            </p>
-
-            <p>
-                <strong>Intraday PCR</strong> uses today’s fresh build-up or volume in PE ÷ today’s fresh build-up or
-                volume in CE for the same period.
-            </p>
-
-
-            <p>
-                
-              <p> <strong>So:</strong></p>
-    
-                If <strong>Intraday PCR</strong> is very high, it means that today more puts are being added or traded
-                than calls, showing strong fear/bearish hedging intraday (often a contrarian bullish hint if extreme).
-            </p>
-
-            <p>
-                If <strong>Intraday PCR</strong> is very low, it means today traders are aggressively taking call
-                positions compared to puts, showing intraday bullishness that can become over-optimistic at extremes.
-            </p>
-
-        <h3 class="pb-2">Max Pain </h3>
-        <p>Max pain (in options) is the strike price at which option buyers (calls + puts together) would lose the most money at expiry, and option sellers would gain the most.</p>
-        <ul>
-            <li>If max pain is below the current LTP, it is shown in red (price trading above the max‑pain level).</li>
-            <li>
-                If max pain is above the current LTP, it is shown in green (price trading below the max‑pain level).
-            </li>
-        </ul>
-
-
+        <h4 class="pb-2 border-bottom">Historical Data</h4>
+         <div class="text-center my-4">
+            <img src="assets/historical.gif" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+          <h4 class="pb-2 border-bottom">Header1</h4>
+        <div class="text-center my-4">
+            <img src="assets/header1.png" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+          <h4 class="pb-2 border-bottom">Header2</h4>
+        <div class="text-center my-4">
+            <img src="assets/header2.png" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
     </div>
+    <div class="container my-5 p-4 border rounded shadow-sm">
 
+
+        <h3 class="pb-2 border-bottom">Chart/Graph</h3>
+        <h4 class="pb-2">Unwinding</h4>
+        <div class="text-center my-4">
+            <img src="assets/chart.png" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+    </div>
+     <div class="container my-5 p-4 border rounded shadow-sm">
+        <h4 class="pb-2">Column/Download</h4>
+        <div class="text-center my-4">
+            <img src="assets/colom.png" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+     </div>
+     <div class="container my-5 p-4 border rounded shadow-sm">
+        <h4 class="pb-2">Column-1</h4>
+        <div class="text-center my-4">
+            <img src="assets/colom1.png" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+        <h4 class="pb-2">Column-2</h4>
+        <div class="text-center my-4">
+            <img src="assets/colom2.png" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+         <h4 class="pb-2">Column-3</h4>
+        <div class="text-center my-4">
+            <img src="assets/colom3.png" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+
+     </div>
 
 
 

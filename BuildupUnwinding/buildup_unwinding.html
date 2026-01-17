@@ -16,53 +16,532 @@
         <div class="text-center my-4">
             <img src="assets/header3.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
+        <h5 class="pb-2"> <strong>1.</strong> Live Status Indicator</h5>
+        <p class="pb-2 fs-5">
+            The Live Status Indicator shows that the displayed data is <strong>real-time market data</strong> and is being <strong>continuously refreshed</strong> It also displays the amount of time passed since the 
+            <strong>last data update</strong>, helping users understand 
+            how fresh the information is.
+        </p>
+        <h5 class="pb-2"><strong>2.</strong> Last Updated Time</h5> 
+        <p class="pb-2 fs-5">
+            Last Updated Time shows the <strong>exact moment</strong> when the data on this page was last refreshed. This timestamp helps users verify the <strong>recency</strong> of the information, ensuring they are making decisions based on the most current market conditions.
+        </p>
+
+  </div>   
+    <div class="container my-5 p-4 border rounded shadow-sm">
         <h4 class="pb-2 border-bottom">Historical Data</h4>
-         <div class="text-center my-4">
+        <div class="text-center my-4">
             <img src="assets/historical.gif" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
-          <h4 class="pb-2 border-bottom">Header1</h4>
+        <p class="pb-2 fs-5">
+             The Historical option allows users to select a <strong>past date</strong> to view buildup and unwinding data for that specific trading day.
+        </p>
+        <p class="pb-2 fs-5">
+            When a historical date is selected, the charts and values update to show how <strong>CE and PE buildup or unwinding</strong> happened during that day instead of live market data.
+        </p>
+        <p class="pb-2 fs-5">
+            This helps users analyze <strong>past market behavior</strong>, compare different days, and understand how price movement and open interest changed over time.
+        </p>
+    </div>
+    <div class="container my-5 p-4 border rounded shadow-sm">
+       <h4 class="pb-2 border-bottom">Header1</h4>
         <div class="text-center my-4">
             <img src="assets/header1.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
-          <h4 class="pb-2 border-bottom">Header2</h4>
+        <h5 class="pb-2"><strong>1.</strong>Index Tools Dropdown</h5>
+        <p class="pb-2 fs-5">
+            This dropdown allows users to select the type of analysis they want to view,
+            such as <strong>Buildup & Unwinding</strong>, Call OI vs Put OI, or Volume-based analysis.
+        </p>
+        <p class="pb-2 fs-5">
+            Once an option is selected, the charts and data update according to the chosen analysis type.
+        </p>
+
+        <h5 class="pb-2"><strong>3.</strong> Symbol Selection Dropdown</h5>
+        <p class="pb-2 fs-5">
+            This dropdown lets users choose the market index or symbol
+            (for example, NIFTY 50, BANK NIFTY, FINNIFTY).
+        </p>
+        <p class="pb-2 fs-5">
+            Selecting a different symbol updates the data to show buildup and unwinding
+            specific to that selected index.
+        </p>
+
+        <h5 class="pb-2"><strong>3.</strong> Expiry Date Dropdown</h5>
+        <p class="pb-2 fs-5">
+            This dropdown opens a list of available <strong>expiry dates</strong>.
+        </p>
+        <p class="pb-2 fs-5">
+            By selecting a different expiry date, users can view
+            buildup and unwinding data for that specific expiry,
+            making it useful for <strong>historical and comparative analysis</strong>.
+        </p>
+    </div>      
+        
+    <div class="container my-5 p-4 border rounded shadow-sm">
+        <h4 class="pb-2 border-bottom">Header2</h4>
         <div class="text-center my-4">
             <img src="assets/header2.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
+
+        <h5 class="pb-2"><strong>1.Start Strike Price Dropdown</strong> </h5>
+        <p class="pb-2 fs-5">
+            This dropdown allows users to select the <strong>starting strike price</strong>
+            for the analysis range.
+        </p>
+        <p class="pb-2 fs-5">
+            The data and charts will begin calculating buildup and unwinding
+            from this selected strike price.
+        </p>
+
+        <h5 class="pb-2"><strong>2.End Strike Price Dropdown</strong></h5>
+        <p class="pb-2 fs-5">
+            This dropdown is used to select the <strong>ending strike price</strong>
+            for the analysis.
+        </p>
+        <p class="pb-2 fs-5">
+            Together with the start strike, it defines the complete
+            <strong>strike price range</strong> included in the analysis.
+        </p>
+
+        <h5 class="pb-2"><strong>3. Interval Selection Dropdown</strong></h5>
+        <p class="pb-2 fs-5">
+            This dropdown lets users choose the <strong>time interval</strong>
+            (such as 1 min, 5 min, 15 min, or 30 min) for data calculation.
+        </p>
+        <p class="pb-2 fs-5">
+            A smaller interval shows more frequent changes,
+            while a larger interval provides a smoother and broader market view.
+        </p>  
     </div>
+
     <div class="container my-5 p-4 border rounded shadow-sm">
 
 
         <h3 class="pb-2 border-bottom">Chart/Graph</h3>
-        <h4 class="pb-2">Unwinding</h4>
+        <h4 class="pb-2"><strong>1. Unwinding Graph</strong></h4>
         <div class="text-center my-4">
-            <img src="assets/unwindingchart.png" class="img-fluid img-thumbnail" alt="error loading image">
+         <img src="assets/unwindingchart.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
-        <h4 class="pb-2 border-bottom">Buildup</h4>
+        <h4 class="pb-2"><strong>Unwinding Chart – Explanation</strong></h4>
+        <p class="pb-2 fs-5">
+            The Unwinding Chart shows how <strong>existing Call (CE) and Put (PE) option positions</strong>
+            are reduced or closed during the trading day.
+        </p>
+        <p class="pb-2 fs-5">
+            The <strong>X-axis represents time</strong> from market open (9:15 AM) to market close,
+            while the <strong>Y-axis represents unwinding value in Lakhs (L)</strong>,
+            showing how much open interest is being removed.
+        </p>
+        <p class="pb-2 fs-5">
+            The <strong>green line (CE Unwinding)</strong> indicates call option position exit,
+            while the <strong>red line (PE Unwinding)</strong> indicates put option position exit.
+            Values appear in the negative direction because positions are being closed.
+        </p>
+        <p class="pb-2 fs-5">
+            A sharp downward move means <strong>heavy position exit</strong>.
+            Higher CE unwinding suggests loss of bullish interest,
+            while higher PE unwinding suggests loss of bearish interest.
+        </p>
+        <p class="pb-2 fs-5">
+            <strong>In short:</strong>
+            This chart helps identify <strong>where traders are booking profits or cutting positions</strong>,
+            giving insight into <strong>weakening or reversing market sentiment</strong>.
+        </p>
+        <h4 class="pb-2 border-bottom"><strong>2. Buildup Graph</strong></h4>
         <div class="text-center my-4">
             <img src="assets/buildupchart.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
-    </div>
-     <div class="container my-5 p-4 border rounded shadow-sm">
+        <h4 class="pb-2"><strong>Buildup Chart – Explanation</strong></h4>
+        <p class="pb-2 fs-5">
+            The Buildup Chart shows how <strong>new Call (CE) and Put (PE) option positions</strong>
+            are created throughout the trading day.
+        </p>
+        <p class="pb-2 fs-5">
+            The <strong>X-axis represents time</strong> from market open (9:15 AM) to market close,
+            while the <strong>Y-axis represents buildup value in Lakhs (L)</strong>,
+            indicating the amount of fresh open interest added.
+        </p>
+        <p class="pb-2 fs-5">
+            The <strong>green line (CE Buildup)</strong> reflects call option position creation and
+            is generally associated with <strong>bullish expectations</strong>.
+            The <strong>red line (PE Buildup)</strong> reflects put option position creation,
+            usually indicating <strong>bearish expectations or strong support levels</strong>.
+        </p>
+        <p class="pb-2 fs-5">
+            A rising line means <strong>more new positions are being added</strong>.
+            Higher PE buildup suggests market support, while higher CE buildup indicates bullish sentiment.
+            If both rise together, the market may remain <strong>range-bound or volatile</strong>.
+        </p>
+        <p class="pb-2 fs-5">
+            <strong>In short:</strong>
+            This chart helps to understand <strong>market sentiment over time</strong>
+            by tracking how aggressively call and put positions are built during the day.
+        </p>
+  </div>
+  <div class="container my-5 p-4 border rounded shadow-sm">
         <h4 class="pb-2">Column/Download</h4>
         <div class="text-center my-4">
             <img src="assets/colom.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
-     </div>
-     <div class="container my-5 p-4 border rounded shadow-sm">
+        <h5 class="pb-2"><strong>1.Columns Selection</strong></h5>
+      <p class="pb-2 fs-6">
+       The Columns option allows users to <strong>enable or disable table columns</strong>
+        based on their preference.
+      </p>
+     <h5 class="pb-2"><strong>2.Download Options</strong></h5>
+     <p class="pb-2 fs-6">
+     The Download option lets users <strong>export the displayed data</strong>
+     for offline use or record keeping.
+     </p>
+  </div>
+
+    <div class="container my-5 p-4 border rounded shadow-sm">
         <h4 class="pb-2">Column-1</h4>
         <div class="text-center my-4">
             <img src="assets/colom1.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
+        <h5 class="pb-2"><strong>1. Time</strong></h5>
+        <p class="pb-2 fs-5">
+            This column shows the <strong>exact time</strong> at which the market data was recorded.
+        </p>
+        <p class="pb-2 fs-5">
+            In simple words, it tells <strong>when</strong> the buildup and unwinding values were captured
+            during the trading day, helping users track changes over different time intervals.
+        </p>
+
+        <h5 class="pb-2"><strong>2. Symbol LTP (Last Traded Price)</strong></h5>
+        <p class="pb-2 fs-5">
+            LTP stands for <strong>Last Traded Price</strong> of the selected symbol
+            (such as NIFTY 50).
+        </p>
+        <p class="pb-2 fs-5">
+            It shows the <strong>latest price</strong> at which the symbol was traded at that time.
+            A green arrow indicates a price increase, while a red arrow indicates a price decrease
+            compared to the previous interval.
+        </p> 
+        
         <h4 class="pb-2">Column-2</h4>
         <div class="text-center my-4">
             <img src="assets/colom2.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
-         <h4 class="pb-2">Column-3</h4>
+      <h5 class="pb-2"><strong>3. PE Unwinding</strong></h5>
+      <p class="pb-2 fs-6">
+      This column shows how many <strong>Put Option (PE) positions</strong>
+      are being closed or reduced. It tells us how much traders are exiting put positions.<br>
+       <strong>How to understand the value:</strong>
+      </p>
+      <ul class="pb-2 fs-6">
+        <li>Values are shown in <strong>negative numbers</strong> because positions are being closed</li>
+        <li>A larger negative value indicates <strong>more put positions are being exited</strong></li>
+        <li><strong>Higher PE unwinding</strong> suggests traders are reducing bearish bets, indicating a shift in market sentiment</li>
+      </ul>
+    <h5 class="pb-2"><strong>4. CE Unwinding</strong></h5>
+    <p class="pb-2 fs-6">
+        This column shows how many <strong>Call Option (CE) positions</strong>
+        are being closed or reduced. It tells us how much traders are exiting call positions.<br>
+        <strong>How to understand the value:</strong>
+    </p>
+    <ul class="pb-2 fs-6">
+        <li>Values are shown in <strong>negative numbers</strong> because positions are being closed</li>
+        <li>A larger negative value indicates <strong>more call positions are being exited</strong></li>
+        <li><strong>Higher CE unwinding</strong> suggests traders are reducing bullish bets, indicating a shift in market sentiment</li>
+    </ul>
+
+
+    <h5 class="pb-2"><strong>5. Unwinding Strength (Unwinding Str)</strong></h5>
+    <p class="pb-2 fs-6">
+        Unwinding Strength shows the <strong>relative strength between Call unwinding and Put unwinding</strong>.
+        It helps identify whether bullish or bearish positions are being exited more aggressively.
+    </p>
+    <p class="pb-2 fs-6">
+        <strong>Formula:</strong>
+    </p>
+    <pre class="pb-2 fs-6">
+    Unwinding Str % = (CE Unwinding − PE Unwinding) / (|CE Unwinding| + |PE Unwinding|) × 100
+    </pre>
+    <p class="pb-2 fs-6">
+        <strong>How to read the result:</strong>
+    </p>
+    <ul class="pb-2 fs-6">
+        <li><strong>≥ +60%</strong> → <strong>Bullish</strong> (Call unwinding is stronger)</li>
+        <li><strong>-60% to +60%</strong> → <strong>Neutral</strong> (Both sides are balanced)</li>
+        <li><strong>≤ -60%</strong> → <strong>Bearish</strong> (Put unwinding is stronger)</li>
+    </ul>
+    <p class="pb-2 fs-6">
+        <strong>Example:</strong>
+    </p>
+    <ul class="pb-2 fs-6">
+        <li>CE Unwinding = <strong>-15,00,000</strong></li>
+        <li>PE Unwinding = <strong>-5,00,000</strong></li>
+    </ul>
+    <p class="pb-2 fs-6">
+        <strong>Applying the formula:</strong>
+    </p>
+    <pre class="pb-2 fs-6">
+    Unwinding Str % = (-15,00,000 − (-5,00,000)) / (15,00,000 + 5,00,000) × 100
+    Unwinding Str % = (-10,00,000 / 20,00,000) × 100
+    Unwinding Str % = -50%
+
+    <strong>Result:</strong> Unwinding Str % = -50%, which indicates <strong>Neutral</strong> sentiment
+    with slightly stronger put-side unwinding.
+    </pre>
+    
+    <h4 class="pb-2">Column-3</h4>
         <div class="text-center my-4">
             <img src="assets/colom3.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
+        <h5 class="pb-2"><strong>6. PE Buildup</strong></h5>
+        <p class="pb-2 fs-6">
+            This column shows how many <strong>Put Option (PE) positions</strong>
+            are being newly added. It tells us how much traders are <strong>creating new put positions</strong>.<br>
+            <strong>How to understand the value:</strong>
+        </p>
+        <ul class="pb-2 fs-6">
+            <li>Values are shown in <strong>positive numbers</strong></li>
+            <li>A larger value indicates <strong>more put positions are being added</strong></li>
+        </ul>
 
-     </div>
+        <h5 class="pb-2"><strong>7. CE Buildup</strong></h5>
+        <p class="pb-2 fs-6">
+            This column shows how many <strong>Call Option (CE) positions</strong>
+            are being newly added. It tells us how much traders are <strong>creating new call positions</strong>.<br>
+            <strong>How to understand the value:</strong>
+        </p>
+        <ul class="pb-2 fs-6">
+            <li>Values are shown in <strong>positive numbers</strong></li>
+            <li>A larger value indicates <strong>more call positions are being added</strong></li>
+        </ul> 
+        
+        <h5 class="pb-2"><strong>8. Buildup Strength (Buildup Str)</strong></h5>
+      <p class="pb-2 fs-6">
+        Buildup Strength shows the <strong>relative strength between Put buildup and Call buildup</strong>.
+        It helps identify whether the market is more bullish, bearish, or neutral.
+       </p>
+     <pre class="pb-2 fs-6">
+        <strong>Formula:</strong> <br>
+        Buildup Str % = (PE Buildup − CE Buildup)/(CE Buildup + PE Buildup) × 100
+      </pre>
+     <p class="pb-2 fs-6">
+        <strong>How to read the result:</strong>
+     </p>
+     <ul class="pb-2 fs-6">
+         <li><strong>≥ +60%</strong> → <strong>Bullish</strong> (Put buildup is much stronger)</li>
+        <li><strong>-60% to +60%</strong> → <strong>Neutral</strong> (Both sides are balanced)</li>
+        <li><strong>≤ -60%</strong> → <strong>Bearish</strong> (Call buildup is much stronger)</li>
+     </ul>
+      <p class="pb-2 fs-6">
+        <strong>Example:</strong>
+      </p>
+     <ul class="pb-2 fs-6">
+        <li>PE Buildup = <strong>20,00,000</strong></li>
+        <li>CE Buildup = <strong>10,00,000</strong></li>
+     </ul>
+
+      <p class="pb-2 fs-6">
+        <strong>Applying the formula:</strong>
+     </p>
+     <pre class="pb-2 fs-6">
+       Buildup Str % = (20,00,000 − 10,00,000)/(20,00,000 + 10,00,000) × 100
+       Buildup Str % = (10,00,000 / 30,00,000) × 100
+       Buildup Str % = 33.33% <br>
+      <strong>Result:</strong> Buildup Str % = 33.33%, which indicates <strong>Bullish</strong> sentiment
+        as it's above +60% threshold, meaning put buildup is notably stronger than call buildup.
+     </pre>
+        <h4 class="pb-2">Column-4</h4>
+        <div class="text-center my-4">
+         <img src="assets/colom4.png" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+        <h5 class="pb-2"><strong>9. PE OI (Put Open Interest)</strong></h5>
+        <p class="pb-2 fs-6">
+            <strong>What it means:</strong>
+            This column shows the total number of <strong>active Put Option (PE) positions</strong>
+            currently open in the market.
+        </p>
+        <p class="pb-2 fs-6">
+            <strong>In simple words:</strong>
+            It tells us how many put contracts are <strong>still open</strong>.
+        </p>
+        <ul class="pb-2 fs-6">
+            <li>Higher PE OI → <strong>Strong support area</strong></li>
+            <li>Shows heavy positioning on the <strong>put side</strong></li>
+        </ul>
+
+        <h5 class="pb-2"><strong>10. CE OI (Call Open Interest)</strong></h5>
+        <p class="pb-2 fs-6">
+            <strong>What it means:</strong>
+            This column shows the total number of <strong>active Call Option (CE) positions</strong>
+            currently open in the market.
+        </p>
+        <p class="pb-2 fs-6">
+            <strong>In simple words:</strong>
+            It tells us how many call contracts are <strong>still open</strong>.
+        </p>
+        <ul class="pb-2 fs-6">
+            <li>Higher CE OI → <strong>Strong resistance area</strong></li>
+            <li>Shows heavy positioning on the <strong>call side</strong></li>
+        </ul>
+
+        <h5 class="pb-2"><strong>11. PE OI Change</strong></h5>
+        <p class="pb-2 fs-6">
+            <strong>What it means:</strong>
+            This column shows the <strong>change in Put Open Interest</strong>
+            compared to the previous time interval.
+        </p>
+        <p class="pb-2 fs-6">
+            <strong>In simple words:</strong>
+            It tells whether put positions are being <strong>added or closed</strong>.
+        </p>
+        <ul class="pb-2 fs-6">
+            <li>Green value → <strong>New PE positions added</strong></li>
+            <li>Red value → <strong>PE positions closed</strong></li>
+        </ul>
+
+        <h5 class="pb-2"><strong>12. CE OI Change</strong></h5>
+        <p class="pb-2 fs-6">
+            <strong>What it means:</strong>
+            This column shows the <strong>change in Call Open Interest</strong>
+            compared to the previous time interval.
+        </p>
+        <p class="pb-2 fs-6">
+            <strong>In simple words:</strong>
+            It tells whether call positions are being <strong>added or closed</strong>.
+        </p>
+        <ul class="pb-2 fs-6">
+            <li>Green value → <strong>New CE positions added</strong></li>
+            <li>Red value → <strong>CE positions closed</strong></li>
+        </ul>
+
+        <h5 class="pb-2"><strong>13. PE Volume</strong></h5>
+        <p class="pb-2 fs-6">
+            <strong>What it means:</strong>
+            This column shows the number of <strong>Put Option contracts traded</strong>
+            during that time interval.
+        </p>
+        <p class="pb-2 fs-6">
+            <strong>In simple words:</strong>
+            It tells how actively <strong>put options</strong> are being traded.
+        </p>
+        <ul class="pb-2 fs-6">
+            <li>High volume → <strong>Strong interest on put side</strong></li>
+            <li>Confirms strength of PE buildup or unwinding</li>
+        </ul>
+
+        <h5 class="pb-2"><strong>14. CE Volume</strong></h5>
+        <p class="pb-2 fs-6">
+            <strong>What it means:</strong>
+            This column shows the number of <strong>Call Option contracts traded</strong>
+            during that time interval.
+        </p>
+        <p class="pb-2 fs-6">
+            <strong>In simple words:</strong>
+            It tells how actively <strong>call options</strong> are being traded.
+        </p>
+        <ul class="pb-2 fs-6">
+            <li>High volume → <strong>Strong interest on call side</strong></li>
+            <li>Confirms strength of CE buildup or unwinding</li>
+        </ul> 
+        
+        <h4 class="pb-2">Column-5</h4>
+        <div class="text-center my-4">
+            <img src="assets/colom5.png" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+        <h5 class="pb-2 border-bottom"><strong>15. Put Call Ratio</strong></h5>
+        <p>Put–Call Ratio (PCR) is a market‑sentiment indicator that compares how many put options are being traded (or
+            are open) to how many call options are being traded (or are open) for the same index or stock. It tells you
+            whether traders, as a group, are more focused on protection/downside (puts) or on upside (calls).</p>
+
+        <h5 class="pb-2">Formula of Put–Call Ratio (PCR)</h5>
+
+        <p><strong>Formula:</strong></p>
+        <p>
+            Put–Call Ratio (PCR) = Total Put Open Interest ÷ Total Call Open Interest
+        </p>
+
+        <p><strong>Example:</strong></p>
+
+        <ul>
+            <li>Total Put Open Interest = 24,00,000</li>
+            <li>Total Call Open Interest = 20,00,000</li>
+        </ul>
+
+        <p>
+            <strong>Calculation:</strong><br>
+            PCR = 24,00,000 ÷ 20,00,000 = <strong>1.20</strong>
+        </p>
+
+        <h5 class="pb-2 border-bottom">What PCR Values Mean?</h5>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>PCR Range</th>
+                    <th>Market View</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>&gt; 1.2</td>
+                    <td>Bullish</td>
+                </tr>
+                <tr>
+                    <td>0.8 – 1.2</td>
+                    <td>Neutral</td>
+                </tr>
+                <tr>
+                    <td>&lt; 0.8</td>
+                    <td>Bearish</td>
+                </tr>
+            </tbody>
+        </table>
+          <h5 class="pb-2"><strong>16. COI PCR(Change in Open Interest Put–Call Ratio)</strong></h5>
+        <p>It shows which side added more fresh positions today —the <strong>put seller</strong> or the <strong>call
+                seller</strong>.</p>
+        <p><strong>COI PCR = Change in Put OI ÷ Change in Call OI</strong></p>
+        <ul class="pb-2 fs-5">
+            <li>
+                <strong>If COI PCR is above 1:</strong><br>
+                • More put OI was added than call OI.<br>
+                • Put seller are stronger → the market has a <strong>bullish bias</strong>.
+            </li>
+            <br>
+            <li>
+                <strong>If COI PCR is below 1:</strong><br>
+                • More call OI was added than put OI.<br>
+                • Call seller are stronger → the market has a <strong>bearish bias</strong>.
+            </li>
+        </ul>
+        <h5>Example 1</h5>
+        <ul class="pb-2 fs-5">
+        <li>Put OI added today: <strong>30,000</strong></li>
+        <li>Call OI added today: <strong>10,000</strong></li>
+        <li>COI PCR =30,000 ÷ 10,000 = 3</li>
+        <li>This means put sellers are much more active, so the market has a <strong>bullish</strong></li>
+        </ul>
+        <h5>Example 2</h5>
+        <ul class="pb-2 fs-5">
+        <li>Put OI added today: <strong>15,000</strong></li>
+        <li>Call OI added today: <strong>30,000</strong></li>
+        <li>COI PCR = 15,000 ÷ 30,000 = 0.5</li>
+        <li>This means call sellers are more active, so the market has a <strong>bearish</strong></li>
+        </ul>
+        <h5 class="pb-2 "> <strong>17.MaxPain</strong></h5>
+        <p class="pb-2 fs-5">
+            Max pain (also called “maximum pain price”) is the strike price where option buyers, in total, would lose
+            the most money at expiry and option sellers would lose the least amount of money .
+        </p>
+        <p class="pb-2 fs-5">
+            At this price, the maximum number of call and put options expire worthless or with very little value, so
+            most buyers lose their premiums while sellers keep most of what they collected.
+        </p>
+        <p class="pb-2 fs-5">
+            
+                Many traders believe that, as expiry comes closer, the underlying price sometimes moves toward this
+                max‑pain strike, because big option sellers try to hedge or manage their risk around that level. so max
+                pain is not a guarantee or a magic target, just one way to see how positions are stacked in the option
+                chain.
+        </p>
+        
+  </div>
 
 
 
