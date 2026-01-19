@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -11,18 +12,109 @@
 
 <body class="bg-white text-dark">
     <div class="container my-5 p-4 border rounded shadow-sm">
-        <h2 class="pb-2 border-bottom">What is Call oi change V/S put oi change?</h2>
-        <h3 class="pb-3S border-bottom"> Why Do We Use This Tool?</h3>
-        <p>This tool displays fresh intraday activity in options, comparing change in call OI and put OI. It helps you
-            see whether traders are adding more calls or more puts right now during the trading session. for NIFTY 50,
-            16‑DEC‑2025, in the 23,950–27,950 range, with a 15‑minute interval.
-        </p>
+        <h4 class="pb-2 border-bottom">Header</h4>
         <div class="text-center my-4">
-            <img src="assets/image.png" class="img-fluid img-thumbnail" alt="error loading image">
+            <img src="assets/header.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
-        <h3 class="pb-2">Chart Explanation</h3>
+        <h5 class="pb-2"> <strong>1.</strong> Live Status Indicator</h5>
+        <p class="pb-2 fs-5">
+            The Live Status Indicator shows that the displayed data is <strong>real-time market data</strong> and is being <strong>continuously refreshed</strong> It also displays the amount of time passed since the 
+            <strong>last data update</strong>, helping users understand 
+            how fresh the information is.
+        </p>
+        <h5 class="pb-2"><strong>2.</strong> Last Updated Time</h5> 
+        <p class="pb-2 fs-5">
+            Last Updated Time shows the <strong>exact moment</strong> when the data on this page was last refreshed. This timestamp helps users verify the <strong>recency</strong> of the information, ensuring they are making decisions based on the most current market conditions.
+        </p>
+    </div> 
+     <div class="container my-5 p-4 border rounded shadow-sm">
+        <h4 class="pb-2 border-bottom">Historical Data</h4>
+        <div class="text-center my-4">
+            <img src="assets/historical.gif" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+        <p class="pb-2 fs-5">
+             The Historical option allows users to select a <strong>past date</strong> to view data for that specific trading day.
+        </p>
+        <p class="pb-2 fs-5">
+            When a historical date is selected, the charts and values update to show how <strong>CE OI and PE OI change</strong> happened during that day instead of live market data.
+        </p>
+        <p class="pb-2 fs-5">
+            This helps users analyze <strong>past market behavior</strong>, compare different days, and understand how price movement and open interest changed over time.
+        </p>
+    </div>  
+    <div class="container my-5 p-4 border rounded shadow-sm">
+        <h4 class="pb-2 border-bottom">Header1</h4>
+      <div class="text-center my-4">
+          <img src="assets/Untitled design.png" class="img-fluid img-thumbnail" alt="error loading image">
+      </div>
+       <h5 class="pb-2"><strong>1.Index Tools Dropdown</strong></h5>
+        <p class="pb-2 fs-5">
+            This dropdown allows users to select the type of analysis they want to view,
+            such as <strong> Call OI chg vs Put OI chg</strong>, Call OI vs Put OI, or Volume-based analysis.
+        </p>
+        <p class="pb-2 fs-5">
+            Once an option is selected, the charts and data update according to the chosen analysis type.
+        </p>
 
-        <ul>
+        <h5 class="pb-2"><strong>2.Symbol Selection Dropdown</strong></h5>
+        <p class="pb-2 fs-5">
+            This dropdown lets users choose the market index or symbol
+            (for example, NIFTY 50, BANK NIFTY, FINNIFTY).
+        </p>
+        <p class="pb-2 fs-5">
+            Selecting a different symbol updates the data to show Call OI chg vs Put OI chg
+            specific to that selected index.
+        </p>
+
+        <h5 class="pb-2"><strong>3.Expiry Date Dropdown</strong></h5>
+        <p class="pb-2 fs-5">
+            This dropdown opens a list of available <strong>expiry dates</strong>. By selecting a different expiry date, users can view
+           Call OI chg vs Put OI chg data for that specific expiry,
+            making it useful for <strong>historical and comparative analysis</strong>.
+        </p>
+          <h4 class="pb-2 border-bottom">Header2</h4>
+        <div class="text-center my-4">
+            <img src="assets/header1.png" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+        
+        <h5 class="pb-2"><strong>4.Start Strike Price Dropdown</strong> </h5>
+        <p class="pb-2 fs-5">
+            This dropdown allows users to select the <strong>starting strike price</strong>
+            for the analysis range.
+        </p>
+        <p class="pb-2 fs-5">
+            The data and charts will begin calculating Call OI chg vs Put OI chg
+            from this selected strike price.
+        </p>
+
+        <h5 class="pb-2"><strong>5.End Strike Price Dropdown</strong></h5>
+        <p class="pb-2 fs-5">
+            This dropdown is used to select the <strong>ending strike price</strong>
+            for the analysis.
+        </p>
+        <p class="pb-2 fs-5">
+            Together with the start strike, it defines the complete
+            <strong>strike price range</strong> included in the analysis.
+        </p>
+
+        <h5 class="pb-2"><strong>6.Interval Selection Dropdown</strong></h5>
+        <p class="pb-2 fs-5">
+            This dropdown lets users choose the <strong>time interval</strong>
+            (such as 1 min, 5 min, 15 min, or 30 min) for data calculation.
+        </p>
+        <p class="pb-2 fs-5">
+            A smaller interval shows more frequent changes,
+            while a larger interval provides a smoother and broader market view.
+        </p>  
+    </div>
+    <div class="container my-5 p-4 border rounded shadow-sm">
+        <h3 class="pb-2 border-bottom">Chart/Graph</h3>
+        <div class="text-center my-4">
+            <img src="assets/chart.png" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+         <h4 class="pb-2">Chart Explanation</h4>
+
+        <ul class="pb-2 fs-5">
             <li>
                 <strong style="color:green;">Green Line – CE OI Chg:</strong>
                 Intraday change in <b>Call Open Interest</b>.
@@ -41,133 +133,207 @@
             </li>
         </ul>
 
-        <h3 class="pb-2"> OI Change Summary (Left Bar Chart)</h3>
-        <ul>
+        <h4 class="pb-2"> OI Change Summary (Left Bar Chart)</h4>
+        <ul class="pb-2 fs-5">
             <li><b>CE OI Chg:</b> ≈ 23.79 L</li>
             <li><b>PE OI Chg:</b> ≈ 18.32 L</li>
         </ul>
 
-        <p>
+        <p class="pb-2 fs-5">
             <b>Conclusion:</b>
             Since <b>fresh Call OI addition is higher than Put OI addition</b>, it indicates
             <b>intraday bullish positioning</b> by option writers in this price range.
         </p>
 
     </div>
-    <div class="container my-5 p-4 border rounded shadow-sm">
-        <h3> Column Explanation</h3>
-
-        <h3 class="pb-2">Time</h3>
+     <div class="container my-5 p-4 border rounded shadow-sm">
+        <h4 class="pb-2">Column/Download</h4>
+        <div class="text-center my-4">
+            <img src="assets/colom-download.png" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+          <h5 class="pb-2"><strong>1.Columns Selection</strong></h5>
+      <p class="pb-2 fs-5">
+       The Columns option allows users to <strong>enable or disable table columns</strong>
+        based on their preference.
+      </p>
+     <h5 class="pb-2"><strong>2.Download Options</strong></h5>
+     <p class="pb-2 fs-5">
+     The Download option lets users <strong>export the displayed data</strong>
+     for offline use or record keeping.
+     </p>
+     </div>
+     <div class="container my-5 p-4 border rounded shadow-sm">
+        <h4 class="pb-2">Column-1</h4>
+        <div class="text-center my-4">
+            <img src="assets/1.png" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+         <h4 class="pb-2"><strong>1. Time</strong></h4>
         <p>
-           The timestamp when the data was recorded. Each row represents data at different intervals during the trading
+            The timestamp when the data was recorded. Each row represents data at different intervals during the trading
             day (15:30, 15:15, 15:00, 14:45, etc.).
         </p>
 
-        <h4>Spot LTP</h4>
+        <h4 class="pb-2"><strong>2.Spot LTP (Last Traded Price)</strong></h4>
         <p>
             Nifty 50 last traded price at that time.
             The green/red tag below shows how much it changed from the previous interval
             and the percentage move.
         </p>
-
-        <h4>PE OI Chg</h4>
-        <p>
+        <h4 class="pb-2">Column-2</h4>
+        <div class="text-center my-4">
+            <img src="assets/2.png" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+         <h3 class="pb-2 fs-5"><strong>3. PE OI Chg(Put Option Open Interest change)</strong></h3>
+         <p class="pb-2 fs-5">
             Net change in put open interest in this strike range compared to the start of the day.
-        </p>
-        <ul>
+         </p>
+        <ul class="pb-2 fs-5">
             <li><b>Positive value:</b> Puts are being added (fresh put positions).</li>
-            <li><b>Negative value (as in your screenshot):</b> Puts are being unwound/closed.</li>
+            <li><b>Negative value (as in this image):</b> Puts are being unwound/closed.</li>
         </ul>
 
-        <p><b>Example (15:30):</b></p>
-        <p>
+        <p class="pb-2 fs-5"><b>Example (15:30):</b></p>
+        <p class="pb-2 fs-5">
             PE OI Chg = 18,32,104 with a ↓ of –7,06,896 from the previous reading →
             total intraday put buildup is still 18.3L above the morning level,
             but 7.06L has been cut since the prior interval.
         </p>
-
-        <h4>CE OI Chg</h4>
-        <p>
+            <h3 class="pb-2 fs-5"><strong>4. CE OI Chg (Call Option Open Interest change)</strong></h3>
+        <p class="pb-2 fs-5"> 
             Net change in call open interest compared to the start of the day.
         </p>
-        <ul>
+        <ul class="pb-2 fs-5">
             <li><b>Positive value:</b> Calls being added.</li>
             <li><b>Negative value:</b> Calls being unwound.</li>
         </ul>
 
-        <p><b>Example (15:30):</b></p>
-        <p>
+        <p class="pb-2 fs-5"><b>Example (15:30):</b></p>
+        <p class="pb-2 fs-5">
             CE OI Chg = 23,78,918 with ↓ –9,48,685 →
             still large net call buildup on the day,
             but heavy profit-booking/unwinding into the close.
         </p>
+            <h3 class="pb-2"><strong>5. Difference</strong></h3>
+            <p class="pb-2 fs-5">
+                <strong>Difference</strong> shows the net gap between
+                <strong>Put Option Open Interest Chg(PE OI Chg)</strong> and
+                <strong>Call Option Open Interest Chg(CE OI Chg)</strong> for the selected strike range.
+            </p>
 
-        <h4>Difference</h4>
-        <p>
-            PE OI Chg – CE OI Chg for that time range.
-        </p>
-        <ul>
-            <li>
+            <h4 class="pb-2"><strong>Formula</strong></h4>
+            <p class="pb-2 fs-5">
+                Difference = PE OI Chg − CE OI Chg
+            </p>
+
+            <ul class="pb-2 fs-5">
+             <li>
                 <b>Negative value</b> (like –5,46,814 at 15:30) means call change &gt; put change,
                 so intraday additions are more on the call side.
-            </li>
-            <li>
+             </li>
+             <li>
                 <b>Positive value</b> would mean put change &gt; call change.
-            </li>
+             </li>
         </ul>
-        <p>
+        <p class="pb-2 fs-5">
             This tells you which side is dominating fresh intraday positions.
         </p>
 
-        <h4>PCR (Change-based)</h4>
-        <p>
-            Here PCR is calculated using PE OI Chg ÷ CE OI Chg for the selected range.
-        </p>
-        <p>
-            PCR around 0.77–0.81 in your rows means fresh call activity is higher than fresh put activity.
-        </p>
-        <p>
-            Values below 1 imply intraday traders are more aggressive on calls than on puts
-            (short-term bullishness).
-        </p>
+            <p class="pb-2 fs-5">
+                <strong>Conclusion:</strong> A negative difference means the call side is stronger,
+                indicating resistance in that zone.
+            </p>  <h4 class="pb-2">Column-3</h4>
+        <div class="text-center my-4">
+            <img src="assets/3.png" class="img-fluid img-thumbnail" alt="error loading image">
+        </div>
+          <h3 class="pb-2 border-bottom"> <strong>6. PCR</strong></h3>
+            <p class="pb-2 fs-5">Put–Call Ratio (PCR) is a market‑sentiment indicator that compares how many put options are being traded
+                (or
+                are open) to how many call options are being traded (or are open) for the same index or stock. It tells
+                you
+                whether traders, as a group, are more focused on protection/downside (puts) or on upside (calls).</p>
+            <h3 class="pb-2">Formula of Put–Call Ratio (PCR)</h3>
 
-        <h4>Intraday PCR</h4>
-        <p>
-            On this page, Intraday PCR is effectively the same concept,
-            focusing purely on today’s change/volume in puts vs calls
-            (not cumulative total OI).
-            In your screenshot it matches PCR (0.77, 0.76, 0.81, 0.79),
-            reinforcing the same sentiment: more call buildup intraday.
-        </p>
+            <p class="pb-2 fs-5"><strong>Formula:</strong></p>
+            <p class="pb-2 fs-5">
+                Put–Call Ratio (PCR) = Total Put Open Interest ÷ Total Call Open Interest
+            </p>
 
-        <h4>Max Pain</h4>
-        <p>
-             the strike where total option buyers would lose the most at expiry
-            (here 25,900 in all rows).
-        </p>
-        <ul>
+            <p class="pb-2 fs-5"><strong>Example:</strong></p>
+
+            <ul class="pb-2 fs-5">
+                <li>Total Put Open Interest = 24,00,000</li>
+                <li>Total Call Open Interest = 20,00,000</li>
+            </ul>
+
+            <p class="pb-2 fs-5">
+                <strong>Calculation:</strong><br>
+                PCR = 24,00,000 ÷ 20,00,000 = <strong>1.20</strong>
+            </p>
+
+            <h3 class="pb-2 border-bottom">What PCR Values Mean?</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>PCR Range</th>
+                        <th>Market View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&gt; 1.2</td>
+                        <td>Bullish</td>
+                    </tr>
+                    <tr>
+                        <td>0.8 – 1.2</td>
+                        <td>Neutral</td>
+                    </tr>
+                    <tr>
+                        <td>&lt; 0.8</td>
+                        <td>Bearish</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="pb-2"> <strong>7. Intraday PCR</strong></h3>
+            <p>Intraday PCR measures the ratio of today’s put option activity to today’s call option activity within the
+                trading day. Usually it is calculated using today’s traded volume (or today’s change in OI) of puts
+                divided by today’s traded volume (or change in OI) of calls for that day. It tells you what traders are
+                doing right now during the session, not what they have built over many days.</p>
+            <h3 class="pb-2">Formula and Difference from Normal PCR</h3>
+
+            <p class="pb-2 fs-5">
+                <strong>Normal PCR</strong> on your NiftyInvest screen uses total PE OI ÷ total CE OI for that expiry
+                and range.
+            </p>
+
+            <p class="pb-2 fs-5">
+                <strong>Intraday PCR</strong> uses today’s fresh build-up or volume in PE ÷ today’s fresh build-up or
+                volume in CE for the same period.
+            </p>
+
+
+            <p class="pb-2 fs-5">
+                
+              <p> <strong>So:</strong></p>
+    
+                If <strong>Intraday PCR</strong> is very high, it means that today more puts are being added or traded
+                than calls, showing strong fear/bearish hedging intraday (often a contrarian bullish hint if extreme).
+            </p>
+
+            <p class="pb-2 fs-5">
+                If <strong>Intraday PCR</strong> is very low, it means today traders are aggressively taking call
+                positions compared to puts, showing intraday bullishness that can become over-optimistic at extremes.
+            </p>
+
+        <h3 class="pb-2"><strong>8. Max Pain</strong></h3>
+        <p class="pb-2 fs-5">Max pain (in options) is the strike price at which option buyers (calls + puts together) would lose the most money at expiry, and option sellers would gain the most.</p>
+        <ul class="pb-2 fs-5">
+            <li>If max pain is below the current LTP, it is shown in red (price trading above the max‑pain level).</li>
             <li>
-                When shown in <b>green</b>, max pain is above current LTP
-                (price below the magnet level).
-            </li>
-            <li>
-                When shown in <b>red</b>, max pain would be below LTP
-                (price above the magnet level).
+                If max pain is above the current LTP, it is shown in green (price trading below the max‑pain level).
             </li>
         </ul>
-        <p>
-            In this image, Nifty is near 25,860–25,887, and Max Pain is 25,900,
-            so it appears green, indicating price is just below that max-pain strike.
-        </p>
 
-
-    </div>
-
-
-
-
-
-
+     </div>
 
 
 
