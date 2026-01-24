@@ -27,13 +27,313 @@
                 pain is not a guarantee or a magic target, just one way to see how positions are stacked in the option
                 chain.</strong>
         </p>
-        <div class="border-bottom"></div>
-        <div class="text-center my-4">
-            <img src="assets/image1.png" class="img-fluid img-thumbnail" alt="error loading image">
-        </div>
+  </div>
+      <div class="container my-5 p-4 border rounded shadow-sm">
+         <h2 class="pb-2 border-bottom">Header</h2>
+         <div class="text-center my-4">
+             <img src="Assets/header.png" class="img-fluid img-thumbnail" alt="error loading image">
+         </div>
+           <h4 class="pb-2"><strong>1.</strong> Last Updated Time</h4>
+            <p class="pb-2">
+                This indicates the most recent time when the option chain data was refreshed. It helps users know how
+                current the information is.
+            </p>
+            <h4 class="pb-2"><strong>2.</strong>Live Status</h4>
+            <p class="pb-2">
+                The Live Status indicator confirms that the option chain data is updating in real time.
+                 The timer shown next to it (for example, 0 min 12s) indicates how many seconds ago the data was last refreshed.
+            </p>
+             <h4 class="pb-2"><strong>3.</strong>Expiry Selection </h4>
+            <p class="pb-2 ">
+                This section allows users to select the expiry date for which they want to view the max pain data.
+                Options typically have multiple expiry dates, and selecting one updates the displayed data accordingly.
+            </p>
+      </div>
+  <div class="container my-5 p-4 border rounded shadow-sm">
+         <h2 class="pb-2 border-bottom">Header1</h2>
+         <div class="text-center my-4">
+             <img src="Assets/header1.png" class="img-fluid img-thumbnail" alt="error loading image">
+         </div>
+        <h3 class="pb-2"> <strong>1. Max Pain</strong></h3>
+        <p class="pb-2">Max Pain is the strike price at which option sellers (writers) face the least total loss at expiry.In simple words: It is the price where most option buyers lose money And most option sellers gain money</p>
+        <h3 class="pb-2"> <strong>2. DFC (Distance From Close)</strong></h3>
 
-    </div>
+      <p>
+        <strong>DFC</strong> shows how far today's closing price is from the current
+        <strong>Max Pain</strong>, expressed in percentage terms.
+      </p>
+
+      <p>
+        It helps traders understand whether the market price is
+        <strong>near</strong> or <strong>far</strong> from the option writers' comfort zone.
+      </p>
+
+      <ul>
+        <li>Lower DFC → Price is closer to Max Pain</li>
+        <li>Higher DFC → Price is far away from Max Pain</li>
+      </ul>
+
+      <h4 class="pt-3">Formula</h4>
+      <pre class="bg-light p-3 rounded border">
+         DFC = (|Close − MP_today| / ATM_strike_gap) × 100
+      </pre>
+
+      <h4 class="pt-3">Example</h4>
+      <p>Assume the following values:</p>
+      <ul>
+        <li>Closing Price = <strong>25,950</strong></li>
+        <li>Max Pain = <strong>25,400</strong></li>
+        <li>ATM Strike Gap = <strong>250</strong></li>
+      </ul>
+
+      <pre class="bg-light p-3 rounded border">
+         DFC = (|25,950 − 25,400| / 250) × 100
+         DFC = (550 / 250) × 100
+         DFC = 220%
+      </pre>
+
+      <p class="pt-3">
+        <strong>Interpretation:</strong>  
+        A DFC of <strong>220%</strong> means the price is very far from Max Pain,
+        increasing the chance of mean reversion if market conditions support it.
+      </p>
+      <h3 class="pb-2"><strong>3. 7D Avg MP (7-Day Average Max Pain)</strong></h3>
+
+  <p>
+    <strong>7D Avg MP</strong> represents the average of Max Pain values from the
+    last <strong>7 trading days</strong>.
+  </p>
+
+  <p>
+    Instead of relying on a single day's Max Pain, this value provides a
+    <strong>smoother and more stable reference level</strong>.
+  </p>
+
+  <h4 class="pt-3">Formula</h4>
+  <pre class="bg-light p-3 rounded border">
+    7D Avg MP = Average(MP of last 7 trading days)
+  </pre>
+
+  <h4 class="pt-3">Example</h4>
+  <p>If Max Pain values for the last 7 days are:</p>
+
+  <pre class="bg-light p-3 rounded border">
+    25,600 | 25,500 | 25,700 | 25,800 | 25,650 | 25,750 | 25,850
+  </pre>
+
+  <p>Then:</p>
+
+  <pre class="bg-light p-3 rounded border">
+    7D Avg MP ≈ 25,721(Approximate Value)
+  </pre>
+
+  <p class="pt-3">
+    <strong>Interpretation:</strong>  
+    The 7-day average Max Pain acts as a stronger support or resistance zone
+    compared to a single-day Max Pain value.
+    </p>
+
+
+    <h3 class="pb-2"><strong>4. Reliability (7D)</strong></h3>
+
+    <p>
+        <strong>Reliability (7D)</strong> measures how trustworthy the
+        <strong>7-day average Max Pain</strong> level is.
+    </p>
+
+    <p>
+        It evaluates reliability by combining two key factors:
+    </p>
+
+    <ul>
+        <li>How far the current price is from Max Pain</li>
+        <li>How volatile Max Pain has been over the last 7 days</li>
+    </ul>
+
+    <p>
+        A higher reliability value means the Max Pain level is more stable
+        and dependable. A lower value indicates uncertainty.
+    </p>
+
+    <h4 class="pt-3">Formula</h4>
+    <pre class="bg-light p-3 rounded border">
+    Reliability = 1 / (1 + (|Close − MP| / ATM_strike_gap) + (StdDev(MP_7D) / ATM_strike_gap))
+    </pre>
+
+    <h4 class="pt-3">Example</h4>
+    <p>Assume the following values:</p>
+
+    <ul>
+        <li>|Close − Max Pain| = <strong>550</strong></li>
+        <li>ATM Strike Gap = <strong>250</strong></li>
+        <li>Standard Deviation of MP (7D) = <strong>300</strong></li>
+    </ul>
+
+    <pre class="bg-light p-3 rounded border">
+    Reliability = 1 / (1 + 2.2 + 1.2)
+    Reliability = 1 / 4.4
+    Reliability ≈ 0.11 → 11%
+    </pre>
+
+    <p class="pt-3">
+        <strong>Interpretation:</strong>  
+        A reliability of <strong>11%</strong> suggests that the 7-day average
+        Max Pain level is not very stable. Traders should avoid using it as a
+        strong standalone support or resistance level.
+    </p>
+</div>
+   <div class="container my-5 p-4 border rounded shadow-sm">
+         <h2 class="pb-2 border-bottom">Header2</h2>
+         <div class="text-center my-4">
+             <img src="Assets/header2.png" class="img-fluid img-thumbnail" alt="error loading image">
+         </div>
+        <h3 class="pb-2"><strong>5. 14D Avg MP (14-Day Average Max Pain)</strong></h3>
+
+      <p>
+        <strong>14D Avg MP</strong> represents the average Max Pain value of the
+        last <strong>14 trading days</strong>.
+      </p>
+
+      <p>
+        This provides a <strong>medium-term view</strong> of where option writers
+        are most comfortable, filtering out short-term noise.
+      </p>
+
+      <h4 class="pt-3">Formula</h4>
+      <pre class="bg-light p-3 rounded border">
+        14D Avg MP = Average(MP of last 14 trading days)
+      </pre>
+
+      <h4 class="pt-3">Example</h4>
+      <p>
+        If the Max Pain values over the last 14 trading days average out to:
+      </p>
+
+      <pre class="bg-light p-3 rounded border">
+        14D Avg MP ≈ 25,925
+      </pre>
+
+      <p class="pt-3">
+        <strong>Interpretation:</strong><br>
+        The 14-day average Max Pain acts as a more stable reference level compared
+        to the 7-day average and is useful for short- to medium-term analysis.
+      </p>
+    <h3 class="pb-2"><strong>6. Reliability (14D)</strong></h3>
+
+  <p>
+    <strong>Reliability (14D)</strong> measures how dependable the
+    <strong>14-day average Max Pain</strong> level is.
+  </p>
+
+  <p>
+    It considers both the current price distance from Max Pain and the
+    volatility of Max Pain over the last 14 days.
+  </p>
+
+  <h4 class="pt-3">Formula</h4>
+  <pre class="bg-light p-3 rounded border">
+Reliability = 1 / (1 + (|Close − MP| / ATM_strike_gap) + (StdDev(MP_14D) / ATM_strike_gap))
+  </pre>
+
+  <h4 class="pt-3">Example</h4>
+  <p>Assume the following values:</p>
+
+  <ul>
+    <li>|Close − Max Pain| = <strong>550</strong></li>
+    <li>ATM Strike Gap = <strong>250</strong></li>
+    <li>Standard Deviation of MP (14D) = <strong>280</strong></li>
+  </ul>
+
+  <pre class="bg-light p-3 rounded border">
+Reliability = 1 / (1 + 2.2 + 1.12)
+Reliability = 1 / 4.32
+Reliability ≈ 0.112 → 11.2%
+  </pre>
+
+  <p class="pt-3">
+    <strong>Interpretation:</strong>  
+    A reliability of around <strong>11%</strong> suggests the 14-day Max Pain
+    level has moderate stability and should be used along with other indicators.
+  </p>
+  <h3 class="pb-2"><strong>7. 21D Avg MP (21-Day Average Max Pain)</strong></h3>
+
+<p>
+  <strong>21D Avg MP</strong> represents the average Max Pain value of the 
+  last <strong>21 trading days</strong>.
+</p>
+
+<p>
+  This gives a <strong>positional or monthly-level</strong> view of where 
+  option writers are most comfortable. It smooths out short-term fluctuations 
+  and shows long-term sentiment.
+</p>
+
+<h4 class="pt-3">Formula</h4>
+<pre class="bg-light p-3 rounded border">
+21D Avg MP = Average(MP of last 21 trading days)
+</pre>
+
+<h4 class="pt-3">Example</h4>
+<p>If the Max Pain values of the last 21 sessions average out to:</p>
+
+<pre class="bg-light p-3 rounded border">
+21D Avg MP ≈ 26,000
+</pre>
+
+<p class="pt-3">
+  <strong>Interpretation:</strong><br>
+  The 21-day average Max Pain acts as a strong and stable positional reference 
+  level, useful for swing or positional analysis.
+</p>
+<h3 class="pb-2"><strong>8. Reliability (21D)</strong></h3>
+
+<p>
+  <strong>Reliability (21D)</strong> measures how dependable the 
+  <strong>21-day average Max Pain</strong> level is.
+</p>
+
+<p>
+  It evaluates reliability based on:
+</p>
+
+<ul>
+  <li>How far the market is trading from Max Pain today</li>
+  <li>Volatility of Max Pain over the last 21 days</li>
+</ul>
+
+<h4 class="pt-3">Formula</h4>
+<pre class="bg-light p-3 rounded border">
+Reliability = 1 / (1 + (|Close − MP| / ATM_strike_gap) 
+                      + (StdDev(MP_21D) / ATM_strike_gap))
+</pre>
+
+<h4 class="pt-3">Example</h4>
+<p>Assume the following values:</p>
+
+<ul>
+  <li>|Close − Max Pain| = <strong>550</strong></li>
+  <li>ATM Strike Gap = <strong>250</strong></li>
+  <li>Standard Deviation of MP (21D) = <strong>260</strong></li>
+</ul>
+
+<pre class="bg-light p-3 rounded border">
+Reliability = 1 / (1 + 2.2 + 1.04)
+Reliability = 1 / 4.24
+Reliability ≈ 0.118 → 11.9%
+</pre>
+
+<p class="pt-3">
+  <strong>Interpretation:</strong><br>
+  A reliability of <strong>around 12%</strong> indicates the 21-day Max Pain 
+  level is relatively stable and suitable for positional market analysis.
+</p>
+  </div>    
+
     <div class="container my-5 p-4 border rounded shadow-sm">
+         <h3 class="pb-2">MaxPain Graph</h3>
+          <div class="text-center my-4">
+            <img src="assets/image1.png" class="img-fluid img-thumbnail" alt="error loading image">
+          </div>
         <h3 class="pb-2">How to claculate MaxPain?</h3>
         <p>
             To calculate max pain, you need to look at the open interest (OI) for all the call and put options at each
@@ -133,11 +433,305 @@
         <p>
             <strong>From this data:</strong> Max Pain = <strong>110</strong>
         </p>
-
-
-
-
     </div>
+      <div class="container my-5 p-4 border rounded shadow-sm">
+          <h3 class="pb-2">Historical-Maxpain</h3>
+              <div class="text-center my-4">
+                <img src="assets/image3.png" class="img-fluid img-thumbnail" alt="error loading image">
+              </div>  
+              <h3 class="pb-2"><strong>Max Pain – Historical View</strong></h3>
+
+<p>
+  This chart shows how the <strong>Max Pain strike</strong> and the
+  <strong>stock’s price (LTP)</strong> have moved over time.
+  It helps traders understand whether the market price is
+  <strong>moving towards</strong> or <strong>away from</strong> the Max Pain level.
+</p>
+
+<hr>
+
+<h4 class="pt-3"><strong>1. How to Read This Chart</strong></h4>
+
+<p>
+  The <strong>X-axis</strong> (horizontal) represents time,
+  showing trading days from left to right.
+</p>
+
+<p>
+  The <strong>Left Y-axis</strong> shows the <strong>Max Pain strike levels</strong>,
+  which correspond to the <strong>blue line</strong>.
+</p>
+
+<p>
+  The <strong>Right Y-axis</strong> shows the <strong>stock’s market price (LTP)</strong>,
+  which corresponds to the <strong>grey dotted line</strong>.
+</p>
+<h4 class="pt-3"><strong>2. What Each Line Shows</strong></h4>
+
+<h5 class="pt-2"><strong> Blue Line – Max Pain Strike</strong></h5>
+
+<p>
+  The blue line represents the <strong>Max Pain level</strong> for each trading day.
+</p>
+
+<ul>
+  <li>It changes based on option open interest distribution</li>
+  <li>Moves slowly compared to price</li>
+  <li>Acts as a <strong>reference or gravity level</strong></li>
+</ul>
+
+<p>
+  A flat blue line indicates stable option positioning.
+  Sharp changes suggest shifting option writer expectations.
+</p>
+
+<h5 class="pt-3"><strong>Grey Dotted Line – Stock LTP</strong></h5>
+
+<p>
+  The grey dotted line shows the <strong>actual market price (Last Traded Price)</strong>
+  of the stock or index.
+</p>
+
+<ul>
+  <li>Moves faster and more frequently</li>
+  <li>Reflects real-time buying and selling</li>
+  <li>Can move above or below Max Pain</li>
+</ul>
+
+<p>
+  When the grey line moves back toward the blue line,
+  it often signals <strong>price normalization</strong>,
+  especially near expiry.
+</p>
+
+<hr>
+
+<h4 class="pt-3"><strong>How to Use This Chart Practically</strong></h4>
+
+<ul>
+  <li>Use it to identify <strong>mean-reversion zones</strong></li>
+  <li>Combine with <strong>DFC and Reliability</strong> for confirmation</li>
+  <li>Avoid using Max Pain alone during strong trending markets</li>
+</ul>
+
+<p class="pt-2">
+  <strong>Note:</strong> Max Pain is a reference tool, not a prediction.
+  Always confirm with price action and other indicators.
+</p>
+</div>
+      <div class="container my-5 p-4 border rounded shadow-sm">
+          <h3 class="pb-2">Historical Option Data (Strike-wise View)</h3>
+              <div class="text-center my-4">
+                <img src="assets/header3.png" class="img-fluid img-thumbnail" alt="error loading image">
+              </div> 
+
+<p>
+  This section appears when you click on a <strong>specific strike price</strong>
+  from the Max Pain page. It shows how both the <strong>Call (CE)</strong> and
+  <strong>Put (PE)</strong> options for that strike have behaved historically.
+</p>
+
+<hr>
+
+<h4 class="pt-3"><strong>What Happens When You Click a Strike</strong></h4>
+
+<p>
+  When you click a strike (for example, <strong>25200</strong>), the system opens
+  historical data for:
+</p>
+
+<ul>
+  <li><strong>NIFTY-25200-CE</strong> (Call Option)</li>
+  <li><strong>NIFTY-25200-PE</strong> (Put Option)</li>
+</ul>
+
+<p>
+  This allows you to analyze <strong>price movement</strong> and
+  <strong>open interest behavior</strong> separately for calls and puts.
+</p>
+
+<hr>
+
+<h4 class="pt-3"><strong>What You See in Each Card</strong></h4>
+
+<h5 class="pt-2"><strong>LTP (Last Traded Price)</strong></h5>
+
+<p>
+  The <strong>LTP</strong> shows the most recent traded price of the option.
+  Along with it, the arrow and number indicate how much the price has
+  <strong>increased or decreased</strong> compared to the previous session.
+</p>
+
+<ul>
+  <li>Green ↑ → Price has increased</li>
+  <li>Red ↓ → Price has decreased</li>
+</ul>
+
+<p>
+  This helps you quickly understand whether buyers or sellers were dominant.
+</p>
+
+<h5 class="pt-3"><strong>Open Interest (OI)</strong></h5>
+
+<p>
+  <strong>Open Interest</strong> shows the total number of active option contracts.
+  The change value indicates whether positions are being:
+</p>
+
+<ul>
+  <li><strong>Added</strong> (increase in OI)</li>
+  <li><strong>Unwound</strong> (decrease in OI)</li>
+</ul>
+
+<p>
+  This gives insight into <strong>trader commitment</strong> at that strike.
+</p>
+
+<hr>
+
+<h4 class="pt-3"><strong>How to Analyze This Data</strong></h4>
+
+<p>
+  By comparing <strong>CE vs PE</strong> data at the same strike, you can:
+</p>
+
+<ul>
+  <li>See where traders are building positions</li>
+  <li>Identify bullish or bearish bias at that level</li>
+  <li>Confirm whether Max Pain is supported by option activity</li>
+</ul>
+
+<p>
+  For example:
+</p>
+
+<ul>
+  <li>CE price falling with rising OI → Call writing (bearish pressure)</li>
+  <li>PE price rising with rising OI → Put buying (downside protection)</li>
+</ul>
+
+<hr>
+
+<h4 class="pt-3"><strong>Why This Section Is Important</strong></h4>
+
+<p>
+  Max Pain shows a <strong>theoretical equilibrium level</strong>, but this
+  section reveals the <strong>actual behavior of traders</strong> at each strike.
+</p>
+
+<p>
+  Using both together helps you avoid blind assumptions and make
+  <strong>more informed trading decisions</strong>.
+</p>
+
+<p class="pt-2">
+  <strong>Tip:</strong> Always combine this data with price action,
+  overall trend, and expiry proximity.
+</p>
+        
+               
+     </div>     
+     
+       <div class="container my-5 p-4 border rounded shadow-sm">
+            <h3 class="pb-2">Max-Pain Table for Index</h3>
+                <div class="text-center my-4">
+                    <img src="assets/image4.png" class="img-fluid img-thumbnail" alt="error loading image">
+                </div>
+
+<p>
+  This section lets you quickly switch between different
+  <strong>market indices</strong> to view their respective
+  <strong>Max Pain levels</strong>.
+</p>
+
+<p>
+  Each button represents an index (like <strong>NIFTY</strong>,
+  <strong>BANKNIFTY</strong>, <strong>FINNIFTY</strong>, etc.).
+  Clicking on any index loads its Max Pain data instantly.
+</p>
+
+<p>
+  This helps you:
+</p>
+
+<ul>
+  <li>Compare Max Pain across multiple indices</li>
+  <li>Focus only on the index you are trading</li>
+  <li>Save time without changing pages</li>
+</ul>
+
+<p class="pt-2">
+  <strong>Tip:</strong> Always select the index that matches your
+  active option strategy for accurate analysis.
+</p>
+
+
+ </div>
+
+        <div class="container my-5 p-4 border rounded shadow-sm">
+            <h3 class="pb-2">Max Pain Table – Column Explanation</h3>
+                <div class="text-center my-4">
+                    <img src="assets/image5.png" class="img-fluid img-thumbnail" alt="error loading image">
+                </div>
+                
+
+<h4 class="pt-3"><strong>1. Symbol</strong></h4>
+<p>
+  This column shows the <strong>index name</strong> (such as NIFTY, BANKNIFTY, FINNIFTY).
+</p>
+<p>
+  You can use the search box to quickly find a specific index.
+  Clicking on a symbol opens its detailed Max Pain view.
+</p>
+
+<hr>
+
+<h4 class="pt-3"><strong>2. Expiry</strong></h4>
+<p>
+  This column displays the <strong>option expiry date</strong> for the selected index.
+</p>
+<p>
+  Max Pain is always calculated with respect to a specific expiry,
+  so this date tells you which contract the data belongs to.
+</p>
+
+<hr>
+
+<h4 class="pt-3"><strong>3. Symbol LTP</strong></h4>
+<p>
+  <strong>Symbol LTP</strong> shows the current market price
+  (<strong>Last Traded Price</strong>) of the index.
+</p>
+<p>
+  The arrow and percentage indicate how much the price has moved
+  compared to the previous session:
+</p>
+<ul>
+  <li> Down arrow → Price has fallen</li>
+  <li> Up arrow → Price has risen</li>
+</ul>
+
+<hr>
+
+<h4 class="pt-3"><strong>4. Max Pain</strong></h4>
+<p>
+  This column shows the <strong>Max Pain strike level</strong> for the index.
+</p>
+<p>
+  It represents the price where option sellers face the least loss
+  and is often used as a <strong>reference or equilibrium level</strong>,
+  especially near expiry.
+</p>
+
+<p class="pt-2">
+  <strong>Tip:</strong> Compare <strong>Symbol LTP</strong> with
+  <strong>Max Pain</strong> to see whether the market is trading
+  above, below, or near the option writers’ comfort zone.
+</p>
+</div>
+
+         
+      
     <div class="container my-5 p-4 border rounded shadow-sm">
 
         <h3 class="pb-2">Why Is It Called “Pain”?</h3>

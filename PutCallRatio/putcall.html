@@ -22,12 +22,27 @@
         <div class="text-center my-4">
             <img src="Assets/header.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
+          <h4 class="pb-2"><strong>1.</strong> Last Updated Time</h4>
+            <p class="pb-2">
+                This indicates the most recent time when the option chain data was refreshed. It helps users know how
+                current the information is.
+            </p>
+            <h4 class="pb-2"><strong>2.</strong>Live Status</h4>
+            <p class="pb-2">
+                The Live Status indicator confirms that the option chain data is updating in real time.
+                 The timer shown next to it  indicates how many seconds ago the data was last refreshed.
+            </p>
    </div>
    <div class="container my-5 p-4 border rounded shadow-sm">
        <h2 class="pb-2 border-bottom">Expiry</h2>
         <div class="text-center my-4">
             <img src="Assets/expiry.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
+          <h4 class="pb-2"><strong>3.</strong>Expiry Selection </h4>
+            <p class="pb-2 ">
+                This section allows users to select the expiry date for which they want to view the data
+                Options typically have multiple expiry dates, and selecting one updates the displayed data accordingly.
+            </p>
     
    </div>
      <div class="container my-5 p-4 border rounded shadow-sm">
@@ -35,12 +50,158 @@
         <div class="text-center my-4">
             <img src="Assets/1.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
+        <h3 class="pb-2"><strong>1. Put OI (Put Open Interest)</strong></h3>
+         <p class="pb-2">
+           <strong>Put OI</strong> shows the total number of active
+           <strong>Put option contracts</strong> for the selected symbol.
+         </p class="pb-2">
+        <h3 class="pb-2"><strong>2. Call OI (Call Open Interest)</strong></h3>
+        <p class="pb-2">
+          <strong>Call OI</strong> shows the total number of active
+          <strong>Call option contracts</strong> for the selected symbol.
+        </p>
+        <h3 class="pb-2 border-bottom"> <strong>3. PCR</strong></h3>
+            <p class="pb-2 fs-5">Put–Call Ratio (PCR) is a market‑sentiment indicator that compares how many put options are being traded
+                (or
+                are open) to how many call options are being traded (or are open) for the same index or stock. It tells
+                you
+                whether traders, as a group, are more focused on protection/downside (puts) or on upside (calls).</p>
+            <h3 class="pb-2">Formula of Put–Call Ratio (PCR)</h3>
+
+            <p class="pb-2 fs-5"><strong>Formula:</strong></p>
+            <p class="pb-2 fs-5">
+                Put–Call Ratio (PCR) = Total Put Open Interest ÷ Total Call Open Interest
+            </p>
+
+            <p class="pb-2 fs-5"><strong>Example:</strong></p>
+
+            <ul class="pb-2 fs-5">
+                <li>Total Put Open Interest = 24,00,000</li>
+                <li>Total Call Open Interest = 20,00,000</li>
+            </ul>
+
+            <p class="pb-2 fs-5">
+                <strong>Calculation:</strong><br>
+                PCR = 24,00,000 ÷ 20,00,000 = <strong>1.20</strong>
+            </p>
+
+            <h3 class="pb-2 border-bottom">What PCR Values Mean?</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>PCR Range</th>
+                        <th>Market View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&gt; 1.2</td>
+                        <td>Bullish</td>
+                    </tr>
+                    <tr>
+                        <td>0.8 – 1.2</td>
+                        <td>Neutral</td>
+                    </tr>
+                    <tr>
+                        <td>&lt; 0.8</td>
+                        <td>Bearish</td>
+                    </tr>
+                </tbody>
+            </table>
+          <h3 class="pb-2"><strong>4. OI Strength %</strong></h3>
+
+<p>
+  <strong>OI Strength %</strong> indicates which side is stronger —
+  <strong>Put OI</strong> or <strong>Call OI</strong> — in percentage terms.
+</p>
+
+<p>
+  It compares the difference between Put OI and Call OI against
+  their <strong>total absolute open interest</strong>.
+</p>
+
+<h4 class="pt-3">Formula</h4>
+<pre class="bg-light p-3 rounded border">
+ Oi Str% = ((PE_OI − CE_OI) / (|PE_OI| + |CE_OI|)) × 100
+</pre>
+
+<h4 class="pt-3">Solved Example</h4>
+<p>Assume the following values from the table:</p>
+
+<ul>
+  <li>Put OI (PE_OI) = <strong>2,052</strong></li>
+  <li>Call OI (CE_OI) = <strong>2,961</strong></li>
+</ul>
+
+<p><strong>Step 1: Find the difference</strong></p>
+<pre class="bg-light p-3 rounded border">
+PE_OI − CE_OI = 2,052 − 2,961 = -909
+</pre>
+
+<p><strong>Step 2: Add absolute values</strong></p>
+<pre class="bg-light p-3 rounded border">
+|PE_OI| + |CE_OI| = 2,052 + 2,961 = 5,013
+</pre>
+
+<p><strong>Step 3: Divide and convert to percentage</strong></p>
+<pre class="bg-light p-3 rounded border">
+(-909 / 5,013) × 100 ≈ -18.13%
+</pre>
+
+<h4 class="pt-3">How to Interpret</h4>
+<ul>
+  <li><strong>&gt; +60%</strong> → Bullish (Put side dominant)</li>
+  <li><strong>-60% to +60%</strong> → Neutral</li>
+  <li><strong>&lt; -60%</strong> → Bearish (Call side dominant)</li>
+</ul>
+
+<p class="pt-2">
+  <strong>Interpretation:</strong><br>
+  A value of <strong>-18.13%</strong> lies in the <strong>neutral zone</strong>,
+  but slightly tilted toward the <strong>call side</strong>,
+  indicating mild bearish pressure.
+</p>
+
+
+
    </div>
    <div class="container my-5 p-4 border rounded shadow-sm">
        <h2 class="pb-2 border-bottom">Header2</h2>
         <div class="text-center my-4">
             <img src="Assets/2.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
+        <h3 class="pb-2"><strong>5. Put OI Chg (Put Open Interest Change)</strong></h3>
+       <p>
+          <strong>Put OI Chg</strong> shows how much the
+          <strong>Put Open Interest</strong> has changed compared to the previous period.
+      </p>
+      <h3 class="pb-2"><strong>6. Call OI Chg (Call Open Interest Change)</strong></h3>
+       <p>
+        <strong>Call OI Chg</strong> shows the change in
+        <strong>Call Open Interest</strong> compared to the previous period.
+      </p>
+      <h3 class="pb-2"><strong>6. Call OI Chg (Call Open Interest Change)</strong></h3>
+
+   <p>
+     <strong>Call OI Chg</strong> shows the change in
+     <strong>Call Open Interest</strong> compared to the previous period.
+  </p>
+
+<p>
+  It reflects whether traders are building or exiting call positions.
+</p>
+
+<ul>
+  <li>Positive value → New call positions added</li>
+  <li>Negative value → Call positions unwound</li>
+</ul>
+
+<p class="pt-2">
+  <strong>Meaning:</strong><br>
+  Increasing Call OI change often suggests
+  <strong>resistance formation or bearish call writing</strong>.
+</p>
+
     
    </div>
      <div class="container my-5 p-4 border rounded shadow-sm">
