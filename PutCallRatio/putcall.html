@@ -180,41 +180,181 @@ PE_OI − CE_OI = 2,052 − 2,961 = -909
         <strong>Call OI Chg</strong> shows the change in
         <strong>Call Open Interest</strong> compared to the previous period.
       </p>
-      <h3 class="pb-2"><strong>6. Call OI Chg (Call Open Interest Change)</strong></h3>
-
-   <p>
-     <strong>Call OI Chg</strong> shows the change in
-     <strong>Call Open Interest</strong> compared to the previous period.
-  </p>
+      <h3 class="pb-2"><strong>7. COI PCR (Change in OI Put–Call Ratio)</strong></h3>
 
 <p>
-  It reflects whether traders are building or exiting call positions.
+  <strong>COI PCR</strong> compares the
+  <strong>change in Put OI</strong> with the
+  <strong>change in Call OI</strong>.
+</p>
+
+<p>
+  It shows which side is seeing stronger fresh activity
+  during the current period.
 </p>
 
 <ul>
-  <li>Positive value → New call positions added</li>
-  <li>Negative value → Call positions unwound</li>
+  <li>COI PCR &gt; 1 → Put OI change is stronger</li>
+  <li>COI PCR &lt; 1 → Call OI change is stronger</li>
 </ul>
 
 <p class="pt-2">
   <strong>Meaning:</strong><br>
-  Increasing Call OI change often suggests
-  <strong>resistance formation or bearish call writing</strong>.
+  A low COI PCR indicates stronger call-side activity,
+  often hinting at <strong>bearish pressure</strong>.
+</p>
+   <h3 class="pb-2"><strong>8. COI Strength %</strong></h3>
+
+<p>
+  <strong>COI Strength %</strong> shows which side is stronger based on the
+  <strong>change in Open Interest</strong> — Put side or Call side.
 </p>
 
-    
+<p>
+  Unlike OI Strength %, this focuses only on
+  <strong>fresh positions added or removed</strong> during the current period.
+</p>
+
+<h4 class="pt-3">Formula</h4>
+<pre class="bg-light p-3 rounded border">
+((PE_COI − CE_COI) / (|PE_COI| + |CE_COI|)) × 100
+</pre>
+
+<h4 class="pt-3">Solved Example</h4>
+<p>Assume the following values from the table:</p>
+
+<ul>
+  <li>Put OI Change (PE_COI) = <strong>412</strong></li>
+  <li>Call OI Change (CE_COI) = <strong>1,235</strong></li>
+</ul>
+
+<p><strong>Step 1: Find the difference</strong></p>
+<pre class="bg-light p-3 rounded border">
+PE_COI − CE_COI = 412 − 1,235 = -823
+</pre>
+
+<p><strong>Step 2: Add absolute values</strong></p>
+<pre class="bg-light p-3 rounded border">
+|PE_COI| + |CE_COI| = 412 + 1,235 = 1,647
+</pre>
+
+<p><strong>Step 3: Divide and convert to percentage</strong></p>
+<pre class="bg-light p-3 rounded border">
+(-823 / 1,647) × 100 ≈ -50.0%
+</pre>
+
+<h4 class="pt-3">How to Interpret</h4>
+<ul>
+  <li><strong>&gt; +60%</strong> → Bullish (Put OI change dominant)</li>
+  <li><strong>-60% to +60%</strong> → Neutral</li>
+  <li><strong>&lt; -60%</strong> → Bearish (Call OI change dominant)</li>
+</ul>
+
+<p class="pt-2">
+  <strong>Interpretation:</strong><br>
+  A value of <strong>-50%</strong> lies in the <strong>neutral zone</strong>
+  but clearly tilted toward the <strong>call side</strong>,
+  indicating short-term bearish pressure due to stronger call-side activity.
+</p>
+   
    </div>
      <div class="container my-5 p-4 border rounded shadow-sm">
          <h2 class="pb-2 border-bottom">interwel</h2>
         <div class="text-center my-4">
             <img src="Assets/interwel.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
+        <p>
+  <strong>Interval</strong> determines how often the market data is refreshed on the chart.
+</p>
+<p>
+  A shorter interval shows quick price and OI changes, while a longer interval smooths out market noise.
+</p>
+<p>
+  Choosing the right interval helps you align the chart with your analysis timeframe.
+</p>
+
+
    </div>
    <div class="container my-5 p-4 border rounded shadow-sm">
        <h2 class="pb-2 border-bottom">Chart</h2>
         <div class="text-center my-4">
             <img src="Assets/chart.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
+        <h3 class="pb-2"><strong>PCR (Put–Call Ratio) – Intraday Chart</strong></h3>
+
+<p>
+  This chart shows the intraday relationship between the
+  <strong>Put–Call Ratio (PCR)</strong> and the
+  <strong>stock’s market price (LTP)</strong>.
+  It helps in understanding sentiment changes during the trading session.
+</p>
+
+<hr>
+
+<h4 class="pt-3"><strong>1. How to Read This Chart</strong></h4>
+
+<p>
+  The <strong>X-axis</strong> (horizontal axis) represents time,
+  showing intraday intervals from market open to close.
+</p>
+
+<p>
+  The <strong>Left Y-axis</strong> represents the <strong>Put–Call Ratio (PCR)</strong>,
+  while the <strong>Right Y-axis</strong> represents the
+  <strong>stock’s price (LTP)</strong>.
+</p>
+
+<p>
+  To read the chart, observe how PCR and price move together or diverge
+  over time to identify changes in market sentiment.
+</p>
+
+<hr>
+
+<h4 class="pt-3"><strong>2. What Each Line Shows</strong></h4>
+
+<h5 class="pt-2"><strong> Blue Line – Put–Call Ratio (PCR)</strong></h5>
+
+<p>
+  The blue line shows the <strong>Put–Call Ratio</strong> at each time interval.
+</p>
+
+<ul>
+  <li>Rising PCR → Increasing put activity (defensive or bullish bias)</li>
+  <li>Falling PCR → Increasing call activity (bearish bias)</li>
+</ul>
+
+<p>
+  Extreme PCR values may indicate overbought or oversold conditions.
+</p>
+
+<h5 class="pt-3"><strong> Grey Dotted Line – Stock LTP</strong></h5>
+
+<p>
+  The grey dotted line represents the <strong>actual market price</strong>
+  of the stock or index.
+</p>
+
+<ul>
+  <li>Shows real-time price movement</li>
+  <li>Helps confirm whether PCR movement aligns with price action</li>
+</ul>
+
+<hr>
+
+<h4 class="pt-3"><strong>How to Use This Chart</strong></h4>
+
+<ul>
+  <li>If PCR rises while price is stable → Possible underlying support</li>
+  <li>If PCR falls while price rises → Rally may be weak or unstable</li>
+  <li>Best used with trend and volume confirmation</li>
+</ul>
+
+<p class="pt-2">
+  <strong>Note:</strong> PCR should be used as a sentiment indicator,
+  not as a standalone buy or sell signal.
+</p>
+
     </div>
    </div>
      <div class="container my-5 p-4 border rounded shadow-sm">
@@ -228,6 +368,24 @@ PE_OI − CE_OI = 2,052 − 2,961 = -909
         <div class="text-center my-4">
             <img src="Assets/image.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
+        <h3 class="pb-2"><strong>Symbol Selection</strong></h3>
+
+<p>
+  This section allows you to select an <strong>index symbol</strong>
+  such as NIFTY, BANKNIFTY, or FINNIFTY.
+</p>
+
+<p>
+  Once a symbol is selected, the system automatically
+  <strong>navigates to the detailed view</strong> of that index
+  and loads all related data.
+</p>
+
+<p>
+  This helps you quickly switch between symbols and
+  focus your analysis on the selected market.
+</p>
+
     
    </div>
    <div class="container my-5 p-4 border rounded shadow-sm">
@@ -235,6 +393,35 @@ PE_OI − CE_OI = 2,052 − 2,961 = -909
         <div class="text-center my-4">
             <img src="Assets/Untitled design.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
+        <h3 class="pb-2"><strong>PCR View & Download Options</strong></h3>
+
+<h4 class="pt-3"><strong>1. Stock PCR</strong></h4>
+<p>
+  This option switches the view to <strong>Stock-based Put–Call Ratio</strong>.
+  It shows PCR data calculated using options of individual stocks.
+</p>
+
+<hr>
+
+<h4 class="pt-3"><strong>2. Commodity PCR</strong></h4>
+<p>
+  This option switches the view to <strong>Commodity-based Put–Call Ratio</strong>.
+  It displays PCR data derived from commodity options.
+</p>
+
+<hr>
+
+<h4 class="pt-3"><strong>3. Download</strong></h4>
+<p>
+  The <strong>Download</strong> option allows you to export the displayed data
+  for offline use or further analysis.
+</p>
+
+<ul>
+  <li><strong>Export CSV</strong> → Download data in spreadsheet format</li>
+  <li><strong>Export PDF</strong> → Download data as a printable report</li>
+</ul>
+
     
    </div>
    <div class="container my-5 p-4 border rounded shadow-sm">
@@ -242,6 +429,53 @@ PE_OI − CE_OI = 2,052 − 2,961 = -909
         <div class="text-center my-4">
             <img src="Assets/colom1.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
+        <h3 class="pb-2"><strong>Put–Call Ratio Table – Column Guide</strong></h3>
+
+<h4 class="pt-3"><strong>1. Symbol</strong></h4>
+<p>
+  This column shows the <strong>index symbol</strong>
+  (such as BANKEX, BANKNIFTY, FINNIFTY).
+</p>
+<p>
+  You can use the search box to quickly find a symbol.
+  Clicking on a symbol opens its detailed PCR analysis.
+</p>
+
+<hr>
+
+<h4 class="pt-3"><strong>2. Expiry</strong></h4>
+<p>
+  This column displays the <strong>option expiry date</strong>
+  for the selected index.
+</p>
+<p>
+  All Put–Call Ratio values in the row are calculated
+  based on this specific expiry.
+</p>
+
+<hr>
+
+<h4 class="pt-3"><strong>3. Symbol LTP</strong></h4>
+<p>
+  <strong>Symbol LTP</strong> shows the current market price
+  (<strong>Last Traded Price</strong>) of the index.
+</p>
+<p>
+  The arrow and percentage indicate how much the price
+  has moved compared to the previous session.
+</p>
+
+<ul>
+  <li>🔴 Down arrow → Price has fallen</li>
+  <li>🟢 Up arrow → Price has risen</li>
+</ul>
+
+<p class="pt-2">
+  <strong>Tip:</strong> Comparing Symbol LTP with PCR values
+  helps in understanding whether market sentiment
+  supports the current price move.
+</p>
+
     
    </div>
    <div class="container my-5 p-4 border rounded shadow-sm">
@@ -249,6 +483,75 @@ PE_OI − CE_OI = 2,052 − 2,961 = -909
         <div class="text-center my-4">
             <img src="Assets/colom2.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
+        <h3 class="pb-2"><strong>4. OI PCR (Open Interest Put–Call Ratio)</strong></h3>
+
+<p>
+  <strong>OI PCR</strong> helps you understand the balance between
+  <strong>Put</strong> and <strong>Call</strong> positions based on
+  total Open Interest.
+</p>
+
+<hr>
+
+<h4 class="pt-3"><strong>a. Put (Put OI)</strong></h4>
+<p>
+  This column shows the <strong>total Put Open Interest</strong>
+  for the selected symbol and expiry.
+</p>
+<p>
+  Higher values indicate stronger participation on the put side,
+  often linked to support or hedging activity.
+</p>
+
+<hr>
+
+<h4 class="pt-3"><strong>b. Call (Call OI)</strong></h4>
+<p>
+  This column shows the <strong>total Call Open Interest</strong>
+  for the selected symbol and expiry.
+</p>
+<p>
+  Higher Call OI usually indicates resistance levels
+  or strong call writing activity.
+</p>
+
+<hr>
+
+<h4 class="pt-3"><strong>c. Ratio (OI PCR)</strong></h4>
+<p>
+  This is the <strong>Put–Call Ratio</strong> calculated using
+  total Open Interest.
+</p>
+<p>
+  It shows whether Put OI or Call OI is dominant.
+</p>
+
+<ul>
+  <li>OI PCR &gt; 1 → Put side stronger (bullish bias)</li>
+  <li>OI PCR &lt; 1 → Call side stronger (bearish bias)</li>
+</ul>
+
+<hr>
+
+<h4 class="pt-3"><strong>d. OI Str (OI Strength %)</strong></h4>
+<p>
+  <strong>OI Strength %</strong> converts the Put vs Call OI difference
+  into a percentage value.
+</p>
+<p>
+  It clearly shows which side is stronger and by how much.
+</p>
+
+<ul>
+  <li>Positive value → Put side dominant</li>
+  <li>Negative value → Call side dominant</li>
+</ul>
+
+<p class="pt-2">
+  <strong>Tip:</strong> Use OI PCR and OI Strength together to
+  identify strong support or resistance zones.
+</p>
+
     
    </div>
    <div class="container my-5 p-4 border rounded shadow-sm">
@@ -256,6 +559,74 @@ PE_OI − CE_OI = 2,052 − 2,961 = -909
         <div class="text-center my-4">
             <img src="Assets/colom3.png" class="img-fluid img-thumbnail" alt="error loading image">
         </div>
+        <h3 class="pb-2"><strong>5. COI PCR (Change in Open Interest Put–Call Ratio)</strong></h3>
+
+<p>
+  <strong>COI PCR</strong> focuses on <strong>fresh activity</strong> by comparing
+  the <strong>change in Put OI</strong> and <strong>change in Call OI</strong>
+  during the selected interval.
+</p>
+
+<hr>
+
+<h4 class="pt-3"><strong>a. Put (Put OI Change)</strong></h4>
+<p>
+  This column shows the <strong>change in Put Open Interest</strong>
+  for the selected symbol and expiry.
+</p>
+<p>
+  A positive value means new put positions were added;
+  a negative value means put positions were unwound.
+</p>
+
+<hr>
+
+<h4 class="pt-3"><strong>b. Call (Call OI Change)</strong></h4>
+<p>
+  This column shows the <strong>change in Call Open Interest</strong>
+  during the same period.
+</p>
+<p>
+  Higher values indicate stronger fresh call-side activity,
+  often linked to resistance or call writing.
+</p>
+
+<hr>
+
+<h4 class="pt-3"><strong>c. Ratio (COI PCR)</strong></h4>
+<p>
+  This is the <strong>Put–Call Ratio</strong> calculated using
+  <strong>OI changes</strong> instead of total OI.
+</p>
+
+<ul>
+  <li>COI PCR &gt; 1 → Put-side change is stronger</li>
+  <li>COI PCR &lt; 1 → Call-side change is stronger</li>
+</ul>
+
+<p>
+  It highlights <strong>short-term sentiment</strong> rather than long-term positioning.
+</p>
+
+<hr>
+
+<h4 class="pt-3"><strong>d. COI Str (COI Strength %)</strong></h4>
+<p>
+  <strong>COI Strength %</strong> converts the difference between
+  Put and Call OI changes into a percentage value.
+</p>
+
+<ul>
+  <li>Positive value → Put-side change dominant (bullish bias)</li>
+  <li>Negative value → Call-side change dominant (bearish bias)</li>
+</ul>
+
+<p class="pt-2">
+  <strong>Tip:</strong> COI PCR is best used for
+  <strong>intraday or short-term analysis</strong>,
+  while OI PCR reflects broader positioning.
+</p>
+
     
    </div>
 
